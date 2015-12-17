@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company_id: 1
+  title: MyString
+  description: MyText
+  city_id: MyString
+  country_id: MyString
+  qualifications: MyText
+  salary_low: MyString
+  salary_high: MyString
+  benefits_description: MyText
+  benefits_airfare: false
+  benefits_housing: false
+  benefits_pto: false
+  benefits_sick: false
+  additional_info: MyText
+  how_to: MyText
+  adtype_id: 1
+
+two:
+  company_id: 1
+  title: MyString
+  description: MyText
+  city_id: MyString
+  country_id: MyString
+  qualifications: MyText
+  salary_low: MyString
+  salary_high: MyString
+  benefits_description: MyText
+  benefits_airfare: false
+  benefits_housing: false
+  benefits_pto: false
+  benefits_sick: false
+  additional_info: MyText
+  how_to: MyText
+  adtype_id: 1
