@@ -19,7 +19,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.inet     :current_sign_in_ip
       t.inet     :last_sign_in_ip
 
-      #Re-entered Rake DB:Migrate after first migrate
+      #Re-entered Rake DB:Migrate after first migrate - 
+      #Doesn't look like values went through -- rails g migration Add
       # Confirmable
       t.string   :confirmation_token
       t.datetime :confirmed_at
