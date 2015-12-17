@@ -1,11 +1,5 @@
 source 'https://rubygems.org'
 
-
-gem 'will_paginate', '~> 3.0.6'
-
-gem 'devise', '~> 3.5', '>= 3.5.3'
-
-gem 'pry-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use postgresql as the database for Active Record
@@ -50,3 +44,8 @@ group :development do
   gem 'spring'
 end
 
+gem 'will_paginate', '~> 3.0.6'
+
+gem 'devise', '~> 3.5', '>= 3.5.3'
+
+gem 'pry-rails'
