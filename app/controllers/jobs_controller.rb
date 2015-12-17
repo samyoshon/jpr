@@ -4,6 +4,7 @@ class JobsController < ApplicationController
 
   def index
   	@jobs = Job.where(["created_at > ?", 30.days.ago]).order("created_at DESC")
+  	@job = Job.new
   end
 
   def new
