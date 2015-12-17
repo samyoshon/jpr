@@ -49,3 +49,7 @@ gem 'will_paginate', '~> 3.0.6'
 gem 'devise', '~> 3.5', '>= 3.5.3'
 
 gem 'pry-rails'
+
+gem 'rails_12factor', group: :production
+
+ruby "2.2.0"
