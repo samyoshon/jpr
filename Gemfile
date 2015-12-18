@@ -46,7 +46,9 @@ group :development do
   gem "better_errors"
 end
 
-gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate', github: 'jonatack/will_paginate'
+
+gem 'ransack'
 
 gem 'devise', '~> 3.5', '>= 3.5.3'
 

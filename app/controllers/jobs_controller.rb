@@ -3,7 +3,16 @@ class JobsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
 
   def index
-  	@jobs = Job.where(["created_at > ?", 30.days.ago]).order("created_at DESC").paginate(page: params[:page], per_page: 1)
+    @search = Job.search(params[:q])
+    @jobs = @search.result
+  	@jobs_all = Job.where(["created_at > ?", 30.days.ago]).order("created_at DESC").paginate(page: params[:page], per_page: 10)
+    
+    ###Find Countries That Have Job Posts - Used for filter option
+    @countries = []
+    @jobs_all.each do |job|
+      @countries << job.country_id
+    end
+    @countries_uniq = @countries.uniq
 
   end
 

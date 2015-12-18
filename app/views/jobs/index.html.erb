@@ -1,3 +1,11 @@
+<%= search_form_for @search do |f| %>
+	<div>
+		<%= f.label :country_id_cont, "Country" %>
+		<%= f.select :country_id_cont, options_for_select(@countries_uniq), :include_blank => "Countries" %>
+	</div>
+		<%= f.submit "Search" %>
+<% end %>
+
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 		<% @jobs.each do |job| %>
@@ -18,6 +26,4 @@
 		  </div>
 		<% end %>
 	</div>
-	<%= will_paginate @products %>
 </div>
-
