@@ -48,6 +48,8 @@ end
 
 gem 'will_paginate', github: 'jonatack/will_paginate'
 
+gem 'country_select'
+
 gem 'ransack'
 
 gem 'devise', '~> 3.5', '>= 3.5.3'
