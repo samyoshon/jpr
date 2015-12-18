@@ -1,11 +1,14 @@
+<!-- Search by country -->
 <%= search_form_for @search do |f| %>
 	<div>
 		<%= f.label :country_id_cont, "Country" %>
-		<%= f.select :country_id_cont, options_for_select(@countries_uniq), :include_blank => "Countries" %>
+		<%= f.select :country_id_cont, options_for_select(@countries_uniq), include_blank: "All", multiple: true %>
 	</div>
 		<%= f.submit "Search" %>
 <% end %>
 
+
+<!-- Results -->
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 		<% @jobs.each do |job| %>
@@ -16,14 +19,16 @@
 		    <h4><%= job.country_id %></h4>
 		    <h4><%= job.qualifications %></h4>
 		    <h4><%= job.benefits_description %></h4>
-		    <h4><%= job.benefits_airfare %></h4>
-		    <h4><%= job.benefits_housing %></h4>
-		    <h4><%= job.benefits_medical %></h4>
-		    <h4><%= job.benefits_pto %></h4>
-		    <h4><%= job.benefits_sick %></h4>
+		    <h4>Airfare <%= job.benefits_airfare %></h4>
+		    <h4>Housing <%= job.benefits_housing %></h4>
+		    <h4>Medical <%= job.benefits_medical %></h4>
+		    <h4>PTO <%= job.benefits_pto %></h4>
+		    <h4>Sick <%= job.benefits_sick %></h4>
 		    <h4><%= job.additional_info %></h4>
 		    <h4><%= job.how_to %></h4>
 		  </div>
 		<% end %>
 	</div>
 </div>
+
+<%= will_paginate @jobs %>
