@@ -1,1 +1,46 @@
-HOME
+<div class="home-hero col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<div class="home-hero-content">
+		<h1>#GONOW</h1>
+		<%= button_to 'Find Jobs Abroad', jobs_path, class: :"btn btn-default", method: :get %>
+	</div>
+</div>
+
+<div class="home-checklist col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<div class="home-checklist-content">
+		<p>Statement 1</p>
+		<p>Statement 2</p>
+		<p>Statement 3</p>
+	</div>
+</div>
+
+<div class="home-newsletter col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<div class="home-checklist-content">
+		<%= text_field :title, :size => 40 %>
+		<%= label :title, "Job Title" %>
+		<%= button_to "Stay Updated", class: :"btn btn-default"%>
+	</div>
+</div>
+
+<div class="home-countries col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<div>	
+		<div class="home-countries-content">
+			<h1>Oh, the places you'll go!</h1>
+		</div>
+		<div class="home-countries-images col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="home-countries-single col-xs-12 col-sm-12 col-md-6 col-lg-6">Korea</div>
+			<div class="home-countries-single col-xs-12 col-sm-12 col-md-6 col-lg-6">Japan</div>
+			<div class="home-countries-single col-xs-12 col-sm-12 col-md-6 col-lg-6">China</div>
+			<div class="home-countries-single col-xs-12 col-sm-12 col-md-6 col-lg-6">Dubai</div>
+			<div class="home-countries-single col-xs-12 col-sm-12 col-md-6 col-lg-6">Vietnam</div>
+			<div class="home-countries-single col-xs-12 col-sm-12 col-md-6 col-lg-6">Indonesia</div>
+		</div>
+	</div>
+</div>
+
+<div class="home-testimonials col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<div class="home-testimonials-content">
+		<%= text_field :title, :size => 40 %>
+		<%= label :title, "Job Title" %>
+		<%= button_to "Stay Updated", class: :"btn btn-default"%>
+	</div>
+</div>
