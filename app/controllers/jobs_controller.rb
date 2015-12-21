@@ -14,7 +14,10 @@ class JobsController < ApplicationController
       @countries << job.country_id
     end
     @countries_uniq = @countries.uniq.sort_by!{|e| e.downcase}
+  end
 
+  def home
+  
   end
 
   def new
