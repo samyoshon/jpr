@@ -1,0 +1,52 @@
+$primary-color: #FF2349;
+$secondary-color: #000000;
+
+.navbar {
+	border-radius: 0px !important;
+	margin-bottom: 0px !important;
+}
+
+.home-hero {
+/*	@include align-items(center);
+  	@include display(flex);
+  	@include flex-direction(center);
+  	@include justify-content(center);*/
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  	align-content: center;
+  	text-align: center;
+  	background: gray;
+}
+
+.home-hero-content {
+/*	@include flex(1);*/
+	padding: 30px;
+}
+
+.home-checklist {
+	text-align: center;
+  	background: yellow;
+}
+
+.home-checklist-content {
+	width: 30%;
+	padding: 10px;
+}
+
+.home-newsletter {
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  	align-content: center;
+  	text-align: center;
+  	background: gray;
+}
+
+.home-countries-content {
+	text-align: center;
+}
+
+.home-countries-images {
+	text-align: center;
+}

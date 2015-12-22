@@ -29,7 +29,6 @@ class JobsController < ApplicationController
   end
 
   def create
-  	# render plain: params
   	@job = current_user.jobs.build(post_params)
   	if @job.save
   		redirect_to root_path
