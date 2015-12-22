@@ -3,17 +3,48 @@ $secondary-color: #666666;
 $third-color: #FFCC33;
 $font-family: 'Lato', sans-serif;
 
+
 .navbar {
 	border-radius: 0px !important;
 	margin-bottom: 0px !important;
-	background-color: white !important;
+	background-color: lighten($secondary-color, 50%) !important;
 	border: 0px !important;
+	min-height: auto !important;
 
 }
 
-.btn {
+.btn-navbar {
+	padding: 20px 25px 20px 25px !important;
+	color: $secondary-color !important;
+	font-family: $font-family;
+	font-weight: 900;
 
+	&:hover {
+		background-color: lighten($third-color, 20%) !important;
+	}
 }
+
+footer {
+	background-color: $primary-color;
+}
+
+.footer-right {
+	display: flex !important;
+  	justify-content: center !important;
+  	align-items: center !important;
+  	align-content: center !important;
+  	text-align: center !important;
+
+  	i {
+  		color: darken($secondary-color, 20%);
+  		font-size: 30px;
+  		padding: 150px 15px;
+  	}
+}
+
+
+
+/* ############################################## */
 
 .home-hero {
 /*	@include align-items(center);
