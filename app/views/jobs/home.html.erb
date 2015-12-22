@@ -1,22 +1,24 @@
 <div class="home-hero col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<div class="home-hero-content">
 		<h1>#GONOW</h1>
+		<h4>It might be now or never</h4>
 		<%= button_to 'Find Jobs Abroad', jobs_path, class: :"btn btn-warning", method: :get %>
 	</div>
 </div>
 
 <div class="home-checklist">
 	<div class="home-checklist-content col-xs-12 col-sm-12 col-md-4 col-lg-4">
-		<h3>Awesome Perks</h3>
-		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+		<h3><i class="fa fa-check-circle-o"></i> Awesome Perks</h3>
+		<p>Many jobs offer free housing, free airfare, medical insurance, and of course, paid vacation days! Take advantage of great perks.
+		</p>
 	</div>
 	<div class="home-checklist-content col-xs-12 col-sm-12 col-md-4 col-lg-4">
-		<h3>Discover New Cultures</h3>
-		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+		<h3><i class="fa fa-check-circle-o"></i>  New Experiences</h3>
+		<p>It's a great big world out there. Discover new cultures, explore new sights, taste new foods. Travel and travel some more!</p>
 	</div>
 	<div class="home-checklist-content col-xs-12 col-sm-12 col-md-4 col-lg-4">
-		<h3>Travel Around</h3>
-		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+		<h3><i class="fa fa-check-circle-o"></i> Travel Around</h3>
+		<p>Take the weekends off to travel to new cities or countries with your new friends. New destinations are so closeby.</p>
 	</div>
 </div>
 
@@ -35,22 +37,34 @@
 		</div>
 		<div class="home-countries-images">
 			<div class="home-countries-single col-xs-12 col-sm-12 col-md-6 col-lg-6">
+				<%= link_to jobs_path do %>
 				<div class="home-img" id="home-img-korea">KOREA</div>
+				<% end %>
 			</div>
 			<div class="home-countries-single col-xs-12 col-sm-12 col-md-6 col-lg-6">
+				<%= link_to jobs_path do %>
 				<div class="home-img" id="home-img-china">CHINA</div>
+				<% end %>
 			</div>
 			<div class="home-countries-single col-xs-12 col-sm-12 col-md-6 col-lg-6">
+				<%= link_to jobs_path do %>
 				<div class="home-img" id="home-img-vietnam">VIETNAM</div>
+				<% end %>
 			</div>
 			<div class="home-countries-single col-xs-12 col-sm-12 col-md-6 col-lg-6">
+				<%= link_to jobs_path do %>
 				<div class="home-img" id="home-img-mexico">MEXICO</div>
+				<% end %>
 			</div>			
 			<div class="home-countries-single col-xs-12 col-sm-12 col-md-6 col-lg-6">
+				<%= link_to jobs_path do %>
 				<div class="home-img" id="home-img-czech">CZECH REPUBLIC</div>
+				<% end %>
 			</div>
 			<div class="home-countries-single col-xs-12 col-sm-12 col-md-6 col-lg-6">
+				<%= link_to jobs_path do %>
 				<div class="home-img" id="home-img-taiwan">TAIWAN</div>
+				<% end %>
 			</div>
 		</div>
 	</div>
@@ -89,7 +103,7 @@
 </div>
 
 <div class="home-action">
-	
+
 </div>
 
 </div>

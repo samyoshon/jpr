@@ -95,6 +95,8 @@ $font-family: 'Lato', sans-serif;
 		margin: 0px;
 		font-size: 50px;
 	} 
+
+
 }
 
 .home-countries-images {
@@ -145,8 +147,8 @@ $font-family: 'Lato', sans-serif;
 .carousel-container {
 	text-align: center;
 	background-color: $third-color;
-	padding-top: 50px;
-	padding-bottom: 15px;
+	padding-top: 80px;
+	padding-bottom: 50px;
 
 	h3 {
 		font-family: $font-family;
@@ -167,7 +169,6 @@ $font-family: 'Lato', sans-serif;
   	align-content: center !important;
   	text-align: center !important;
   	background-color: $third-color;
-  	padding-bottom: 30px;
 }
 
 .carousel-indicators {
