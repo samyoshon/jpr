@@ -42,7 +42,7 @@ $third-color: #FFCC33;
 .home-checklist-content {
 	width: 30%;
 	padding: 40px 10px;
-	background-color: tint($third-color, 20%);
+	background-color: tint($third-color, 10%);
 }
 
 /* ############################################## */
@@ -57,30 +57,24 @@ $third-color: #FFCC33;
   	padding: 30px;
 }
 
+/* ############################################## */
+
+.home-countries-container {
+	padding: 30px 10px 70px 10px;
+}
+
 .home-countries-content {
 	text-align: center;
 }
 
+.home-countries-content	h1 {
+	padding: 60px;
+	margin: 0px;
+	font-size: 50px;
+}
+
 .home-countries-images {
 	text-align: center;
-}
-
-.carousel-container {
-	text-align: center;
-}
-
-.carousel-indicators-container {
-	display: flex !important;
-  	justify-content: center !important;
-  	align-items: center !important;
-  	align-content: center !important;
-  	text-align: center !important;
-  	background: gray !important;
-}
-
-.carousel-indicators {
-	margin: 0 !important;
-	position: static !important;
 }
 
 .home-img {
@@ -93,6 +87,8 @@ $third-color: #FFCC33;
   	background-size: cover;
 	height: 160px;
 	font-size: 40px;
+	left: 50%;
+	font-weight: 500;
 }
 
 #home-img-korea {
@@ -100,21 +96,61 @@ $third-color: #FFCC33;
 }
 
 #home-img-china {
-	background-image: image-url('s-korea.png');
+	background-image: image-url('china.png');
 }
 
 #home-img-vietnam {
-	background-image: image-url('s-korea.png');
+	background-image: image-url('vietnam.png');
 }
 
 #home-img-mexico {
-	background-image: image-url('s-korea.png');
+	background-image: image-url('mexico.png');
 }
 
 #home-img-czech {
-	background-image: image-url('s-korea.png');
+	background-image: image-url('czech.png');
 }
 
 #home-img-taiwan {
-	background-image: image-url('s-korea.png');
+	background-image: image-url('taiwan.png');
 }
+
+/* ############################################## */
+
+.carousel-container {
+	text-align: center;
+	background-color: $third-color;
+	padding-top: 50px;
+	padding-bottom: 15px;
+}
+
+.carousel-container h3 {
+	margin: 0px;
+	margin-bottom: 15px;
+}
+
+.carousel-indicators-container {
+	display: flex !important;
+  	justify-content: center !important;
+  	align-items: center !important;
+  	align-content: center !important;
+  	text-align: center !important;
+  	background-color: $third-color;
+  	padding-bottom: 30px;
+}
+
+.carousel-indicators {
+	margin: 0 !important;
+	position: static !important;
+}
+
+.carousel-content {
+	display: flex !important;
+  	justify-content: center !important;
+  	align-items: center !important;
+  	align-content: center !important;
+  	text-align: center !important;
+}
+
+
+/* ############################################## */
