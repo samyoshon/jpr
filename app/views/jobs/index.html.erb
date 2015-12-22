@@ -1,15 +1,16 @@
 <!-- Search by country -->
-<div>
-
+<div class="home-hero col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<div class="home-hero-content">
+		<h1>#GONOW</h1>
+	</div>
 </div>
 
 <div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 ">	
-	<%= search_form_for @search do |f| %>
+	<%= search_form_for @search, :html => {:class => "form-inline"} do |f| %>
 		<div>
-			<%= f.label :country_id_cont, "Country" %>
 			<%= f.select(:country_id_cont, options_for_select(@countries_uniq), {include_blank: "All"}, {:class => 'form-control'}) %>
+			<%= f.submit "Search", class: :"btn btn-warning" %>
 		</div>
-			<%= f.submit "Search" %>
 	<% end %>
 </div >
 

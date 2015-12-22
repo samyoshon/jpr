@@ -20,8 +20,7 @@ $(document).ready(function() {
 
 	$('.jobs-list-container').click(function(){
 		var idContainer = this.id;
-		console.log(idContainer);
-		$('#jobs-list-hidden-' + idContainer).toggle();
+		$('#jobs-list-hidden-' + idContainer).slideToggle();
 	});
 
 });
