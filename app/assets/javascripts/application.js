@@ -17,4 +17,11 @@
 
 $(document).ready(function() {
 	console.log('READY!');
+
+	$('.jobs-list-container').click(function(){
+		var idContainer = this.id;
+		console.log(idContainer);
+		$('#jobs-list-hidden-' + idContainer).toggle();
+	});
+
 });

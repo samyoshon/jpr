@@ -18,15 +18,14 @@
 	</div>
 	<div class="home-checklist-content col-xs-12 col-sm-12 col-md-4 col-lg-4">
 		<h3><i class="fa fa-check-circle-o"></i> Travel Around</h3>
-		<p>Take the weekends off to travel to new cities or countries with your new friends. New destinations are so closeby.</p>
+		<p>Take the weekends off to travel to new cities or countries with your new friends. New destinations are so close by.</p>
 	</div>
 </div>
 
 <div class="home-newsletter col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<div class="home-newsletter-content">
 		<h4>Get a weekly email of the best new jobs abroad</h4>
-		<%= text_field :title, :size => 40 %>
-		<%= label :title, "Job Title" %>
+		<%= email_field :title, nil, :placeholder => "you@example.com", class: :"text-field-newsletter form-control" %>
 	</div>
 </div>
 
