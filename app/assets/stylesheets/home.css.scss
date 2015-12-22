@@ -1,6 +1,7 @@
 $primary-color: #FE9000;
 $secondary-color: #666666;
 $third-color: #FFCC33;
+$font-family: 'Lato', sans-serif;
 
 .navbar {
 	border-radius: 0px !important;
@@ -30,7 +31,14 @@ $third-color: #FFCC33;
 .home-hero-content {
 /*	@include flex(1);*/
 	padding: 30px;
+
+		h1 {
+			font-family: $font-family;
+			font-weight: 900;
+		}
 }
+
+
 
 /* ############################################## */
 
@@ -43,6 +51,15 @@ $third-color: #FFCC33;
 	width: 30%;
 	padding: 40px 10px;
 	background-color: tint($third-color, 10%);
+
+	h3 {
+		font-family: $font-family;
+		font-weight: 900;
+	}
+
+	p {
+		font-family: $font-family;
+	}
 }
 
 /* ############################################## */
@@ -55,22 +72,29 @@ $third-color: #FFCC33;
   	text-align: center;
   	background: $primary-color;
   	padding: 30px;
+
+	h4 {
+		font-family: $font-family;
+	} 
 }
 
 /* ############################################## */
 
 .home-countries-container {
 	padding: 30px 10px 70px 10px;
+	background-color: lighten($secondary-color, 54%);
 }
 
 .home-countries-content {
 	text-align: center;
-}
-
-.home-countries-content	h1 {
-	padding: 60px;
-	margin: 0px;
-	font-size: 50px;
+	
+	h1 {
+		font-family: $font-family;
+		font-weight: 900;
+		padding: 60px 0px 30px 0px;
+		margin: 0px;
+		font-size: 50px;
+	} 
 }
 
 .home-countries-images {
@@ -88,7 +112,8 @@ $third-color: #FFCC33;
 	height: 160px;
 	font-size: 40px;
 	left: 50%;
-	font-weight: 500;
+	font-weight: 400;
+	font-family: $font-family;
 }
 
 #home-img-korea {
@@ -122,11 +147,17 @@ $third-color: #FFCC33;
 	background-color: $third-color;
 	padding-top: 50px;
 	padding-bottom: 15px;
+
+	h3 {
+		font-family: $font-family;
+		margin: 0px;
+		margin-bottom: 15px;
+	}
 }
 
-.carousel-container h3 {
-	margin: 0px;
-	margin-bottom: 15px;
+.carousel-inner > .item > p {
+	font-family: $font-family;
+	padding: 0px 70px 0px 70px;
 }
 
 .carousel-indicators-container {
@@ -142,14 +173,6 @@ $third-color: #FFCC33;
 .carousel-indicators {
 	margin: 0 !important;
 	position: static !important;
-}
-
-.carousel-content {
-	display: flex !important;
-  	justify-content: center !important;
-  	align-items: center !important;
-  	align-content: center !important;
-  	text-align: center !important;
 }
 
 
