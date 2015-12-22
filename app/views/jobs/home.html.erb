@@ -1,11 +1,11 @@
 <div class="home-hero col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<div class="home-hero-content">
 		<h1>#GONOW</h1>
-		<%= button_to 'Find Jobs Abroad', jobs_path, class: :"btn btn-default", method: :get %>
+		<%= button_to 'Find Jobs Abroad', jobs_path, class: :"btn btn-warning", method: :get %>
 	</div>
 </div>
 
-<div class="home-checklist col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<div class="home-checklist">
 	<div class="home-checklist-content col-xs-12 col-sm-12 col-md-4 col-lg-4">
 		<h3>Statement 1</h3>
 		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
@@ -27,12 +27,12 @@
 	</div>
 </div>
 
-<div class="home-countries col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	<div class="home-countries col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<div class="home-countries">
+	<div class="home-countries">
 		<div class="home-countries-content col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<h1>Oh, the places you'll go!</h1>
 		</div>
-		<div class="home-countries-images col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<div class="home-countries-images">
 			<div class="home-countries-single col-xs-12 col-sm-12 col-md-6 col-lg-6">Korea</div>
 			<div class="home-countries-single col-xs-12 col-sm-12 col-md-6 col-lg-6">Japan</div>
 			<div class="home-countries-single col-xs-12 col-sm-12 col-md-6 col-lg-6">China</div>
@@ -44,8 +44,36 @@
 </div>
 
 <div class="home-testimonials col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	<div class="home-testimonials-content">
-		<h1>Testimonials Go Here</h1>
-		<h4>Lorem Ipsum This Shit</h4>
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+		<div class="carousel-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		  	<h4>REAL PEOPLE, REAL EXPERIENCES</h4>
+		  	<div class="carousel-inner" role="listbox">
+		    	<div class="item active">
+			      	<div class="carousel-content">
+			        	<h1>CAPTION</h1>
+			      	</div>
+		    	</div>
+			    <div class="item">
+			      	<div class="carousel-content">
+			        	<h1>CAPTION</h1>
+			      	</div>
+			    </div>
+			    <div class="item">
+			      	<div class="carousel-content">
+			        	<h1>CAPTION</h1>
+			      	</div>
+			    </div>
+	  		</div>
+  		</div>
+  		<div class="carousel-indicators-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	  		<ol class="carousel-indicators">
+	    		<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+		    	<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+		    	<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+	  		</ol>
+  		</div>
 	</div>
 </div>
+
+</div>
+

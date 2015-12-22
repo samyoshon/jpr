@@ -1,11 +1,16 @@
-$primary-color: #FF2349;
-$secondary-color: #000000;
+$primary-color: #FE9000;
+$secondary-color: #666666;
 
 .navbar {
 	border-radius: 0px !important;
 	margin-bottom: 0px !important;
+	background-color: white !important;
+	border: 0px !important;
 }
 
+.btn {
+
+}
 .home-hero {
 /*	@include align-items(center);
   	@include display(flex);
@@ -49,4 +54,22 @@ $secondary-color: #000000;
 
 .home-countries-images {
 	text-align: center;
+}
+
+.carousel-container {
+	text-align: center;
+}
+
+.carousel-indicators-container {
+	display: flex !important;
+  	justify-content: center !important;
+  	align-items: center !important;
+  	align-content: center !important;
+  	text-align: center !important;
+  	background: gray !important;
+}
+
+.carousel-indicators {
+	margin: 0 !important;
+	position: static !important;
 }
