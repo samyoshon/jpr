@@ -10,7 +10,11 @@ $font-family: 'Lato', sans-serif;
 	background-color: lighten($secondary-color, 50%) !important;
 	border: 0px !important;
 	min-height: auto !important;
+}
 
+.navbar-toggle {
+	background-color: $primary-color !important;
+	border: 2px solid $primary-color !important;
 }
 
 .btn-navbar {
