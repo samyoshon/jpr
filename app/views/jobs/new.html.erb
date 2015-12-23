@@ -26,6 +26,18 @@
 		   <%= f.text_area :qualifications, class: "form-control login-form job-post-textarea"  %>
 		  </div>
 
+
+  		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  			<%= f.label :qualifications, "Salary", class: "control-label" %>
+  		</div>
+   		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+   			<%= f.text_field :salary_low, class: "form-control login-form", placeholder: "ex:  2.1 million KRW" %>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+   			<%= f.text_field :salary_high, class: "form-control login-form", placeholder: "ex:  2.3 million KRW"  %>
+   		</div>
+
+
 		  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 		   <%= f.label :benefits_description, "Benefits", class: "control-label" %>
 		   <%= f.text_area :benefits_description, class: "form-control login-form job-post-textarea"  %>

@@ -4,7 +4,7 @@ class JobsController < ApplicationController
 
   def index
     @search = Job.search(params[:q])
-    @jobs = @search.result.paginate(page: params[:page], per_page: 5)
+    @jobs = @search.result.paginate(page: params[:page], per_page: 5).order("created_at DESC")
     
     ###Find Countries That Have Job Posts - Used for filter option
   	@jobs_all = Job.where(["created_at > ?", 30.days.ago]).order("created_at DESC")
@@ -42,7 +42,7 @@ class JobsController < ApplicationController
   private 
 
   	def post_params
-  		params.require(:job).permit(:title, :description, :city_id, :country_id, :qualifications, :benefits_description, :benefits_airfare, :benefits_housing, :benefits_medical, :benefits_pto, :benefits_sick, :additional_info, :how_to)
+  		params.require(:job).permit(:title, :description, :city_id, :country_id, :qualifications, :salary_low, :salary_high, :benefits_description, :benefits_airfare, :benefits_housing, :benefits_medical, :benefits_pto, :benefits_sick, :additional_info, :how_to)
   	end
 
 end
