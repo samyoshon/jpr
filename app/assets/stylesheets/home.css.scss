@@ -9,7 +9,12 @@ $font-family: 'Lato', sans-serif;
 	margin-bottom: 0px !important;
 	background-color: lighten($secondary-color, 50%) !important;
 	border: 0px !important;
+	border-bottom: 5px solid $primary-color !important;
 	min-height: auto !important;
+	position: fixed !important;
+	top: 0 !important;
+	z-index: 100 !important;
+	width: 100% !important;
 }
 
 .navbar-toggle {
@@ -63,6 +68,7 @@ footer {
   	align-content: center;
   	text-align: center;
   	background: lighten($secondary-color, 30%);
+  	margin-top: 60px;
 }
 
 .home-hero-content {
