@@ -30,7 +30,7 @@
   	text-align: center;
 
 	.jobs-search-bar-container {
-		margin: 20px 20px 0px 20px;
+		margin: 25px;
 	}
 
 	.search-bar-label {
@@ -45,9 +45,6 @@
 
 /* #################################### */
 
-.jobs-list {
-	padding: 30px;
-}
 
 .jobs-list-container {
 	border-top: 3px groove lighten($secondary-color, 20%);
@@ -74,7 +71,7 @@
 	}
 
 	&:hover {
-		background-color: lighten($secondary-color, 55%);
+		background-color: lighten($third-color, 30%);
 	}
 
 	.jobs-list-header {
@@ -116,10 +113,53 @@
 
 /* #################################### */
 
+
 .jobs-pagination {
-	display: flex !important;
-  	justify-content: center !important;
-  	align-items: center !important;
-  	align-content: center !important;
-  	font-family: $font-family;
+  text-align: center;
+  padding: 0.3em;
+  cursor: default; 
+  margin: 25px;
+}
+
+.jobs-pagination a, .jobs-pagination span, .jobs-pagination em {
+    padding: 0.2em 0.5em; 
+}
+
+.jobs-pagination .disabled {
+    color: $secondary-color; 
+}
+
+.jobs-pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    color: $primary-color; 
+}
+
+.jobs-pagination a {
+    border: 1px solid $third-color;
+    color: $primary-color;
+    text-decoration: none; 
+}
+
+.jobs-pagination a:hover, .jobs-pagination a:focus {
+      border-color: $third-color;
+      background: $primary-color;
+      color: white; 
+}
+  
+.jobs-pagination .page_info {
+    color: #aaaaaa;
+    padding-top: 0.8em;
+}
+
+.jobs-pagination .previous_page, .jobs-pagination .next_page {
+    border-width: 2px;
+}
+
+.jobs-pagination .previous_page {
+    margin-right: 1em;
+}
+
+  .jobs-pagination .next_page {
+    margin-left: 1em;
 }
