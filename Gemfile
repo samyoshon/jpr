@@ -48,7 +48,7 @@ end
 
 gem 'will_paginate', github: 'jonatack/will_paginate'
 
-gem 'country_select'
+gem 'country_select', git: 'https://github.com/alibabajan/country_select.git'
 
 gem 'ransack'
 

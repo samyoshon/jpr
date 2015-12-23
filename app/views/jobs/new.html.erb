@@ -25,7 +25,7 @@
 
 		  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 		   <%= f.label :country_id, "Country", class: "control-label" %>
-		   <%= f.country_select(:country_id, {prompt: "Select a Country"}, {class: "form-control login-form"}) %>
+		   <%= f.country_select(:country_id, {prompt: "Select a Country"}, {class: "form-control login-form"}, label: false) %>
 		  </div>
 
 		  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -37,11 +37,11 @@
   		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
   			<%= f.label :qualifications, "Salary", class: "control-label" %>
   		</div>
-   		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-   			<%= f.text_field :salary_low, class: "form-control login-form", maxlength: 30, placeholder: "ex:  2.1 million KRW" %>
+   		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+   			<%= f.text_field :salary_low, class: "form-control login-form", maxlength: 30, placeholder: "Salaray Low (ex:  2.1 million KRW)" %>
 		</div>
-		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-   			<%= f.text_field :salary_high, class: "form-control login-form", maxlength: 30, placeholder: "ex:  2.3 million KRW"  %>
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+   			<%= f.text_field :salary_high, class: "form-control login-form", maxlength: 30, placeholder: "Salary High (ex:  2.3 million KRW)" %>
    		</div>
 
 
