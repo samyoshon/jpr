@@ -20,7 +20,7 @@ $font-family: 'Lato', sans-serif;
 	font-weight: 900;
 
 	&:hover {
-		background-color: lighten($third-color, 20%) !important;
+		color: $primary-color !important;
 	}
 }
 
@@ -41,8 +41,6 @@ footer {
   		padding: 150px 15px;
   	}
 }
-
-
 
 /* ############################################## */
 
@@ -69,10 +67,7 @@ footer {
 		}
 }
 
-
-
 /* ############################################## */
-
 
 .home-checklist {
 	text-align: center;
@@ -130,8 +125,6 @@ footer {
 		margin: 0px;
 		font-size: 50px;
 	} 
-
-
 }
 
 .home-countries-images {
@@ -151,6 +144,10 @@ footer {
 	left: 50%;
 	font-weight: 400;
 	font-family: $font-family;
+
+	&:hover {
+	}
+
 }
 
 #home-img-korea {
@@ -210,6 +207,5 @@ footer {
 	margin: 0 !important;
 	position: static !important;
 }
-
 
 /* ############################################## */
