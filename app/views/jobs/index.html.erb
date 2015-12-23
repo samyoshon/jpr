@@ -9,8 +9,8 @@
 <div class="jobs-search-bar col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<%= search_form_for @search, :html => {:class => "form-inline"} do |f| %>
 		<div class="jobs-search-bar-container">
-			<%= f.label :country_id_cont, "Country:", class: "control-label search-bar-label" %>
-			<%= f.select(:country_id_cont, options_for_select(@countries_uniq), {include_blank: "All"}, {:class => 'form-control search-bar-field'}) %>
+			<%= f.label :country_id, "Country:", class: "control-label search-bar-label" %>
+			<%= f.select(:country_id, options_for_select(@countries_uniq), {include_blank: "All"}, {:class => 'form-control search-bar-field'}) %>
 			<%= f.submit "Search", class: :"btn btn-warning search-bar-button" %>
 		</div>
 	<% end %>

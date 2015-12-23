@@ -25,28 +25,34 @@
          	<ul class="nav navbar-nav navbar-right">
 	          	<% if user_signed_in? %>
 					<li>
-						<%= link_to 'Settings', edit_user_registration_path, class: :"btn-navbar" %>
+						<%= link_to "#{current_user.email}", edit_user_registration_path, class: :"btn-navbar" %>
 					</li>
 					<li>
-						<%= link_to 'Post A Job', new_job_path, :method => :get, class: :"btn-navbar" %>
+						<%= link_to "Post A Job", new_job_path, :method => :get, class: :"btn-navbar" %>
 					</li>
 					<li>
-						<%= link_to 'Logout', destroy_user_session_path, :method => :delete, class: :"btn-navbar" %>
+						<%= link_to "Logout", destroy_user_session_path, :method => :delete, class: :"btn-navbar" %>
 					</li>
 				<% else %>
 					<li>
-						<%= link_to 'Search Jobs', jobs_path, :method => :get, class: :"btn-navbar" %>
+						<%= link_to "Search Jobs", jobs_path, :method => :get, class: :"btn-navbar" %>
 					</li>
 					<li>
-						<%= link_to 'Post A Job', new_job_path, :method => :get, class: :"btn-navbar" %>
+						<%= link_to "Post A Job", new_job_path, :method => :get, class: :"btn-navbar" %>
 					</li>
 				<% end %> 
 			</ul>
         </div>
     </nav>
 
-<!-- 	<span class="notice alert alert-success"><%= notice %></span>
-    <span class="alert alert alert-info"><%= alert %></span> -->
+<!--     <div>
+    	<% if notice %>
+    		<%= notice %>
+    	<% end %>
+    	<% if alert %>
+    	    <%= alert %>
+    	<% end %>
+   	</div> -->
 
 	<%= yield %>
 
