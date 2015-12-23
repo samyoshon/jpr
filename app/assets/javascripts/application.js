@@ -15,12 +15,3 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(function() {
-	console.log('READY!');
-
-	$('.jobs-list-container').click(function(){
-		var idContainer = this.id;
-		$('#jobs-list-hidden-' + idContainer).slideToggle();
-	});
-
-});

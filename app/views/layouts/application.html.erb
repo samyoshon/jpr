@@ -2,13 +2,14 @@
 <html>
 <head>
 	<title>JetPath | Go Now</title>
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,900' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>		
 	<nav class="navbar navbar-inverse" role="navigation">
@@ -24,20 +25,20 @@
          	<ul class="nav navbar-nav navbar-right">
 	          	<% if user_signed_in? %>
 					<li>
-						<%= link_to'Edit registration', edit_user_registration_path, class: :"btn-navbar" %>
+						<%= link_to 'Settings', edit_user_registration_path, class: :"btn-navbar" %>
 					</li>
 					<li>
 						<%= link_to 'Post A Job', new_job_path, :method => :get, class: :"btn-navbar" %>
 					</li>
 					<li>
-						<%= link_to'Logout', destroy_user_session_path, :method => :delete, class: :"btn-navbar" %>
+						<%= link_to 'Logout', destroy_user_session_path, :method => :delete, class: :"btn-navbar" %>
 					</li>
 				<% else %>
 					<li>
 						<%= link_to 'Search Jobs', jobs_path, :method => :get, class: :"btn-navbar" %>
 					</li>
 					<li>
-						<%= link_to'Post A Job', new_job_path, :method => :get, class: :"btn-navbar" %>
+						<%= link_to 'Post A Job', new_job_path, :method => :get, class: :"btn-navbar" %>
 					</li>
 				<% end %> 
 			</ul>
