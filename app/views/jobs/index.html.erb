@@ -1,28 +1,30 @@
 
-<div class="home-hero col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	<div class="home-hero-content">
+<div class="jobs-hero col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<div class="jobs-hero-content">
 		<h1>#GONOW</h1>
 	</div>
 </div>
 
 <!-- Search by country -->
-<div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 ">	
+<div class="jobs-search-bar col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<%= search_form_for @search, :html => {:class => "form-inline"} do |f| %>
-		<div>
-			<%= f.select(:country_id_cont, options_for_select(@countries_uniq), {include_blank: "All"}, {:class => 'form-control'}) %>
-			<%= f.submit "Search", class: :"btn btn-warning" %>
+		<div class="jobs-search-bar-container">
+			<%= f.label :country_id_cont, "Country:", class: "control-label search-bar-label" %>
+			<%= f.select(:country_id_cont, options_for_select(@countries_uniq), {include_blank: "All"}, {:class => 'form-control search-bar-field'}) %>
+			<%= f.submit "Search", class: :"btn btn-warning search-bar-button" %>
 		</div>
 	<% end %>
 </div>
 
+
 <!-- Results -->
 <div class="jobs-list col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 	<% @jobs.each do |job| %>
-		<div class="jobs-list-container col-xs-12 col-sm-12 col-md-12 col-lg-12" id="<%= job.id %>">
-			<div class="jobs-list-header col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<div class="jobs-list-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="jobs-list-header col-xs-12 col-sm-12 col-md-12 col-lg-12" id="<%= job.id %>">
 		   		<h4><%= link_to job.title, job_path(job), id: :'job-title-link' %></h4>
 		   		<h3><%= job.user.email %></h3>
-			    <h4><i class="fa fa-map-marker"></i> <%= job.city_id %>, <%= job.country_id %></h4>
+			    <h4><i class="fa fa-map-marker"></i>  <%= job.city_id %>, <%= job.country_id %></h4>
 			    <div class="jobs-benefits">
 			    	<% if job.benefits_housing? %>
 			    		<span class="jobs-benefits-icons"><i class="fa fa-home"></i> Housing </span>
@@ -93,14 +95,11 @@
 				    	<h3><%= simple_format job.how_to %></h3>
 				    </div>
 				</div>
-<!-- 			    <h4>Airfare <%= job.benefits_airfare %></h4>
-			    <h4>Housing <%= job.benefits_housing %></h4>
-			    <h4>Medical <%= job.benefits_medical %></h4>
-			    <h4>PTO <%= job.benefits_pto %></h4>
-			    <h4>Sick <%= job.benefits_sick %></h4> -->
 			</div>
 	    </div>
 	<% end %>
 </div>
 
-<%= will_paginate @jobs %>
+<div class="jobs-pagination col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<%= will_paginate @jobs %>
+</div>
