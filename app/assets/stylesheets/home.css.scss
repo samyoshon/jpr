@@ -72,11 +72,11 @@ footer {
   	background-image: image-url('hero-bg.png');
   	background-size: cover;
   	background-position: center bottom;
+  	height: 100vh;
 }
 
 .home-hero-content {
 /*	@include flex(1);*/
-	padding: 300px;
 	color: white;
 
 		h1 {
