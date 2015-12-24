@@ -69,11 +69,15 @@ footer {
   	text-align: center;
   	background: lighten($secondary-color, 30%);
   	margin-top: 60px;
+  	background-image: image-url('hero-bg.png');
+  	background-size: cover;
+  	background-position: center bottom;
 }
 
 .home-hero-content {
 /*	@include flex(1);*/
-	padding: 30px;
+	padding: 300px;
+	color: white;
 
 		h1 {
 			font-family: $font-family;
