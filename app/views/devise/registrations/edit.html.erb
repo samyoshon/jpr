@@ -4,30 +4,85 @@
 
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
             <%= devise_error_messages! %>
+            <div class="login-container-profile">
+                <div class="field">
+                    <%= f.label :email %><br />
+                    <%= f.email_field :email, autofocus: true, class: "form-control login-form", placeholder: "Email" %>
+                </div>
 
-            <div class="field">
-              <%= f.label :email %><br />
-              <%= f.email_field :email, autofocus: true, class: "form-control login-form", placeholder: "Email" %>
+                <div class="field">
+                    <%= f.label "Company Name" %><br />
+                    <%= f.text_field :name, autofocus: true, class: "form-control login-form", placeholder: "Name" %>
+                </div>
+
+                <div class="field">
+                    <%= f.label "Company Description" %><br />
+                    <%= f.text_area :description, autofocus: true, class: "form-control login-form show-company-textarea", placeholder: "Description" %>
+                </div>
+
+                <div class="field">
+                    <%= f.label :website %><br />
+                    <%= f.text_field :website, autofocus: true, class: "form-control login-form", placeholder: "Website" %>
+                </div>
+
+                <div class="field">
+                    <%= f.label :facebook %><br />
+                    <%= f.text_field :facebook, autofocus: true, class: "form-control login-form", placeholder: "Facebook" %>
+                </div>
             </div>
 
-            <div class="field">
-              <%= f.label :name %><br />
-              <%= f.text_field :name, autofocus: true, class: "form-control login-form", placeholder: "Name" %>
-            </div>
+            <div class="login-container-qa">
+                <h2>Q&A Section</h2>
 
-            <div class="field">
-              <%= f.label :description %><br />
-              <%= f.text_area :description, autofocus: true, class: "form-control login-form", placeholder: "Description" %>
-            </div>
+                <div class="field">
+                  <%= f.label "Question" %><br />
+                  <%= f.text_field :question_one, autofocus: true, class: "form-control login-form", placeholder: "Frequently Asked Question" %>
+                </div>
 
-            <div class="field">
-              <%= f.label :website %><br />
-              <%= f.text_field :website, autofocus: true, class: "form-control login-form", placeholder: "Website" %>
-            </div>
+                <div class="field">
+                  <%= f.label "Answer" %><br />
+                  <%= f.text_area :answer_one, autofocus: true, class: "form-control login-form show-company-textarea", placeholder: "Answer" %>
+                </div>
 
-            <div class="field">
-              <%= f.label :facebook %><br />
-              <%= f.text_field :facebook, autofocus: true, class: "form-control login-form", placeholder: "Facebook" %>
+                <div class="field">
+                  <%= f.label "Question" %><br />
+                  <%= f.text_field :question_two, autofocus: true, class: "form-control login-form", placeholder: "Frequently Asked Question" %>
+                </div>
+
+                <div class="field">
+                  <%= f.label "Answer" %><br />
+                  <%= f.text_area :answer_two, autofocus: true, class: "form-control login-form show-company-textarea", placeholder: "Answer" %>
+                </div>
+
+                <div class="field">
+                  <%= f.label "Question" %><br />
+                  <%= f.text_field :question_three, autofocus: true, class: "form-control login-form", placeholder: "Frequently Asked Question" %>
+                </div>
+
+                <div class="field">
+                  <%= f.label "Answer" %><br />
+                  <%= f.text_area :answer_three, autofocus: true, class: "form-control login-form show-company-textarea", placeholder: "Answer" %>
+                </div>
+
+                <div class="field">
+                  <%= f.label "Question" %><br />
+                  <%= f.text_field :question_four, autofocus: true, class: "form-control login-form", placeholder: "Frequently Asked Question" %>
+                </div>
+
+                <div class="field">
+                  <%= f.label "Answer" %><br />
+                  <%= f.text_area :answer_four, autofocus: true, class: "form-control login-form show-company-textarea", placeholder: "Answer" %>
+                </div>
+
+                <div class="field">
+                  <%= f.label "Question" %><br />
+                  <%= f.text_field :question_five, autofocus: true, class: "form-control login-form", placeholder: "Frequently Asked Question" %>
+                </div>
+
+                <div class="field">
+                  <%= f.label "Answer" %><br />
+                  <%= f.text_area :answer_five, autofocus: true, class: "form-control login-form show-company-textarea", placeholder: "Answer" %>
+                </div>
             </div>
 
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

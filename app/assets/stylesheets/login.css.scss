@@ -9,12 +9,15 @@
 }
 
 .login-container {
-	margin-top: 60px;
 	padding: 80px;
 	border: 1px solid black;
 	border-radius: 10px;
 	background-color: #FFFFFF;
 	width: 450px;
+
+		h2 {
+			font-weight: 900;
+		}
 }
 
 #edit-container {
