@@ -1,21 +1,23 @@
 
 $(document).ready(function(){
-	console.log('PAGE LOADED');
 	$('.jobs-list-header').click(function(){
 		var idContainer = this.id;
 		$('#jobs-list-hidden-' + idContainer).slideToggle("fast");
 		console.log('hello');
+	});
+
+	$('.login-collapse').click(function(){
+		var idContainer = this.id;
+		$('#collapse-' + idContainer).slideToggle("fast");
 	});
 });
 
 //Added 'Page:Load' because Turbolinks screws up JS when using link_to
 
 $(document).on('page:load',function(){
-	console.log('PAGE LOADED');
 	$('.jobs-list-header').click(function(){
 		var idContainer = this.id;
 		$('#jobs-list-hidden-' + idContainer).slideToggle("fast");
 		console.log('hello');
 	});
 });
-	

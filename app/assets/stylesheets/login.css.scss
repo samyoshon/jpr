@@ -41,3 +41,11 @@
 	font-family: $font-family;
 	margin-top: 10px;
 }
+
+.login-collapse {
+	cursor: pointer;
+}
+
+.login-collapse-hidden {
+	display: none;
+}

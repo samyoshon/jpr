@@ -13,13 +13,17 @@ $font-family: 'Lato', sans-serif;
 	min-height: auto !important;
 }
 
+#navbar-logo img {
+	padding: 10px 20px !important;
+}
+
 .navbar-toggle {
 	background-color: $primary-color !important;
 	border: 2px solid $primary-color !important;
 }
 
 .btn-navbar {
-	padding: 20px 25px 20px 25px !important;
+	padding: 30px 25px 30px 25px !important;
 	color: $secondary-color !important;
 	font-family: $font-family;
 	font-weight: 900;
