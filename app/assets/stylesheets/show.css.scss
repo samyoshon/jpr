@@ -1,3 +1,41 @@
 .show-company {
-	margin-top: 100px;
+	margin-top: 65px;
+  	font-family: $font-family;
+}
+
+.show-company-header-container {
+  	padding: 50px 40px !important;
+  	background-color: $third-color;
+  	color: #000000;
+
+  	h1 {
+  		font-weight: 900;
+  	}
+
+  	i {
+  		font-size: 25px;
+  		color: #000000; 
+
+  		&:hover {
+  			color: $primary-color;
+  			font-size: 30px;
+  		}
+  	}
+
+  	p {
+  		margin-top: 30px;
+  	}
+}
+
+.show-company-qa-container {
+	padding: 50px 40px !important;
+}
+
+.show-company-qa-sign {
+	text-align: center;
+
+	h1 {
+		font-weight: 900;
+		margin: 0;
+	}
 }

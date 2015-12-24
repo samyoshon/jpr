@@ -16,7 +16,7 @@
 		h1 {
 			font-family: $font-family;
 			font-weight: 900;
-			font-size: 80px;
+			font-size: 10vh;
 		}
 }
 
@@ -59,20 +59,22 @@
 	font-family: $font-family;
 	background-color: #FFFFFF;
 
-	#job-title-link {
+	.job-links {
 		color: $primary-color;
+	}
+
+	#job-title-link {
 		font-weight: 900;
 		font-size: 25px;
 	}
 
 	h3 {
 		font-size: 18px;
-		margin-top: 10px;
 	}
 
 	h4 {
 		font-size: 15px;
-		margin: 0px;
+		margin: 2px 0px;
 	}
 
 	&:hover {

@@ -1,6 +1,33 @@
-<div class="show-company col-xs-12 col-s-12 col-md-12 col-lg-12">
-
-	<%= @job.user.name %>
+<div class="show-company">
+	<div class="show-company-header-container">
+		<div class="show-company-header-title">
+			<h1><%= @job.user.name %></h1>
+		</div>
+		<div class="show-company-header-social">
+			<% if @job.user.website? %>
+				<span class="jobs-benefits-icons">
+					<a href="https://<%= @job.user.website %>" target="blank">
+						<i class="fa fa-home"></i>
+					</a>
+				</span>
+			<% end %>
+			<% if @job.user.facebook? %>
+				<span class="jobs-benefits-icons">
+					<a href="https://<%= @job.user.facebook %>" target="blank">
+						<i class="fa fa-facebook-official"></i>
+					</a>
+				</span>
+			<% end %>
+		</div>
+		<div class="show-company-header-description">
+			<p><%= @job.user.description %></p>
+		</div>
+	</div>
+	<div class="show-company-qa-container">
+		<div class="show-company-qa-sign">
+			<h1>Q&A</h1>
+		</div>
+	</div>
 
 
 <!-- FUTURE // SHOW ALL JOBS POSTED BY SAME USER -->

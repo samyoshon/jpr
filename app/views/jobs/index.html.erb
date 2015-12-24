@@ -23,8 +23,8 @@
 		<% @jobs.each do |job| %>
 			<div class="jobs-list-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<div class="jobs-list-header col-xs-12 col-sm-12 col-md-12 col-lg-12" id="<%= job.id %>">
-			   		<h4><%= link_to job.title, job_path(job), id: :'job-title-link' %></h4>
-			   		<h3><%= job.user.name %></h3>
+			   		<h4><%= link_to job.title, job_path(job), class: :'job-links', id: :'job-title-link' %></h4>
+			   		<h3><%= link_to job.user.name, job_path(job), class: :'job-links' %></h3>
 				    <h4><i class="fa fa-map-marker"></i>  <%= job.city_id %>, <%= job.country_id %></h4>
 				    <div class="jobs-benefits">
 				    	<% if job.benefits_housing? %>

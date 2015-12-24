@@ -4,7 +4,7 @@
   	align-items: center !important;
   	align-content: center !important;
   	font-family: $font-family;
-  	padding: 80px;
+  	padding: 50px;
   	background-color: $third-color;
 }
 
@@ -15,6 +15,10 @@
 	border-radius: 10px;
 	background-color: #FFFFFF;
 	width: 450px;
+}
+
+#edit-container {
+	width: 100%;
 }
 
 .login-form {
