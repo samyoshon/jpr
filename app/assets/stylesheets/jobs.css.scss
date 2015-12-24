@@ -46,6 +46,9 @@
 
 /* #################################### */
 
+.jobs-background {
+	background: linear-gradient($third-color, lighten($primary-color, 30%));
+}
 
 .jobs-list-container {
 	border-top: 3px groove lighten($secondary-color, 20%);
@@ -54,6 +57,7 @@
 	border-bottom: 1px groove lighten($secondary-color, 20%);
 	padding: 30px 30px 30px 50px !important;
 	font-family: $font-family;
+	background-color: #FFFFFF;
 
 	#job-title-link {
 		color: $primary-color;
@@ -138,13 +142,13 @@
 }
 
 .jobs-pagination a {
-    border: 1px solid $third-color;
+    border: 1px solid $primary-color;
     color: $primary-color;
     text-decoration: none; 
 }
 
 .jobs-pagination a:hover, .jobs-pagination a:focus {
-      border-color: $third-color;
+      border-color: $primary-color;
       background: $primary-color;
       color: white; 
 }

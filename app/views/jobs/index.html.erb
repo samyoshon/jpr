@@ -6,100 +6,102 @@
 </div>
 
 <!-- Search by country -->
-<div class="jobs-search-bar col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	<%= search_form_for @search, :html => {:class => "form-inline"} do |f| %>
-		<div class="jobs-search-bar-container">
-			<%= f.label :country_id_cont, "Country:", class: "control-label search-bar-label" %>
-			<%= f.select(:country_id_cont, options_for_select(@countries_uniq), {include_blank: "All"}, {:class => 'form-control search-bar-field'}) %>
-			<%= f.submit "Search", class: :"btn btn-warning search-bar-button" %>
-		</div>
-	<% end %>
-</div>
-
-
-<!-- Results -->
-<div class="jobs-list col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
-	<% @jobs.each do |job| %>
-		<div class="jobs-list-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<div class="jobs-list-header col-xs-12 col-sm-12 col-md-12 col-lg-12" id="<%= job.id %>">
-		   		<h4><%= link_to job.title, job_path(job), id: :'job-title-link' %></h4>
-		   		<h3><%= job.user.email %></h3>
-			    <h4><i class="fa fa-map-marker"></i>  <%= job.city_id %>, <%= job.country_id %></h4>
-			    <div class="jobs-benefits">
-			    	<% if job.benefits_housing? %>
-			    		<span class="jobs-benefits-icons"><i class="fa fa-home"></i> Housing </span>
-			    	<% end %>
-			    	<% if job.benefits_airfare? %>
-			    		<span class="jobs-benefits-icons"><i class="fa fa-plane"></i> Airfare </span>
-			    	<% end %>
-			    	<% if job.benefits_medical? %>
-			    		<span class="jobs-benefits-icons"><i class="fa fa-heart"></i> Health Insurance </span>
-			    	<% end %>
-			    	<% if job.benefits_pto? %>
-			    		<span class="jobs-benefits-icons"><i class="fa fa-suitcase"></i> PTO </span>
-			    	<% end %>
-			    	<% if job.benefits_sick? %>
-			    		<span class="jobs-benefits-icons"><i class="fa fa-hospital-o"></i> Sick Days </span>
-			    	<% end %>
-			    </div>
+<div class="jobs-background col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<div class="jobs-search-bar col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<%= search_form_for @search, :html => {:class => "form-inline"} do |f| %>
+			<div class="jobs-search-bar-container">
+				<%= f.label :country_id_cont, "Country:", class: "control-label search-bar-label" %>
+				<%= f.select(:country_id_cont, options_for_select(@countries_uniq), {include_blank: "All"}, {:class => 'form-control search-bar-field'}) %>
+				<%= f.submit "Search", class: :"btn btn-warning search-bar-button" %>
 			</div>
-			<div class="jobs-list-body col-xs-12 col-sm-12 col-md-12 col-lg-12" id="jobs-list-hidden-<%= job.id%>">
-				<div class="jobs-list-block col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<div class="jobs-list-title col-xs-12 col-sm-12 col-md-3 col-lg-3">
-				    	<h3>Job Description</h3>
-				    </div>
-				    <div class="jobs-list-content col-xs-12 col-sm-12 col-md-9 col-lg-9">
-				    	<h3><%= simple_format job.description %></h3>
-				    </div>
-				</div>
-				<div class="jobs-list-block col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<div class="jobs-list-title col-xs-12 col-sm-12 col-md-3 col-lg-3">
-				    	<h3>Qualifications</h3>
-				    </div>
-				    <div class="jobs-list-content col-xs-12 col-sm-12 col-md-9 col-lg-9">
-				    	<h3><%= simple_format job.qualifications %></h3>
-				    </div>
-				</div>
-				<div class="jobs-list-block col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<div class="jobs-list-title col-xs-12 col-sm-12 col-md-3 col-lg-3">
-				    	<h3>Salary</h3>
-				    </div>
-				    <div class="jobs-list-content col-xs-12 col-sm-12 col-md-9 col-lg-9">
-				    	<h3><%= job.salary_low %> - <%= job.salary_high %></h3>
-				    </div>
-				</div>
-				<div class="jobs-list-block col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				    <div class="jobs-list-title col-xs-12 col-sm-12 col-md-3 col-lg-3">
-				    	<h3>Benefits</h3>
-				    </div>
-				    <div class="jobs-list-content col-xs-12 col-sm-12 col-md-9 col-lg-9">
-				    	<h3><%= simple_format job.benefits_description %></h3>
-				    	<div class="jobs-list-benefits">
+		<% end %>
+	</div>
 
-				    	</div>
-				    </div>
-				</div>
-				<div class="jobs-list-block col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<div class="jobs-list-title col-xs-12 col-sm-12 col-md-3 col-lg-3">
-				    	<h3>Additional Info</h3>
-				    </div>
-				    <div class="jobs-list-content col-xs-12 col-sm-12 col-md-9 col-lg-9">
-				    	<h3><%= simple_format job.additional_info %></h3>
-				    </div>
-				</div>
-				<div class="jobs-list-block col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				    <div class="jobs-list-title col-xs-12 col-sm-12 col-md-3 col-lg-3">
-				    	<h3>How To Apply</h3>
-				    </div>
-				    <div class="jobs-list-content col-xs-12 col-sm-12 col-md-9 col-lg-9">
-				    	<h3><%= simple_format job.how_to %></h3>
-				    </div>
-				</div>
-			</div>
-	    </div>
-	<% end %>
-</div>
 
-<div class="jobs-pagination col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	<%= will_paginate @jobs %>
+	<!-- Results -->
+	<div class="jobs-list col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+		<% @jobs.each do |job| %>
+			<div class="jobs-list-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="jobs-list-header col-xs-12 col-sm-12 col-md-12 col-lg-12" id="<%= job.id %>">
+			   		<h4><%= link_to job.title, job_path(job), id: :'job-title-link' %></h4>
+			   		<h3><%= job.user.name %></h3>
+				    <h4><i class="fa fa-map-marker"></i>  <%= job.city_id %>, <%= job.country_id %></h4>
+				    <div class="jobs-benefits">
+				    	<% if job.benefits_housing? %>
+				    		<span class="jobs-benefits-icons"><i class="fa fa-home"></i> Housing </span>
+				    	<% end %>
+				    	<% if job.benefits_airfare? %>
+				    		<span class="jobs-benefits-icons"><i class="fa fa-plane"></i> Airfare </span>
+				    	<% end %>
+				    	<% if job.benefits_medical? %>
+				    		<span class="jobs-benefits-icons"><i class="fa fa-heart"></i> Health Insurance </span>
+				    	<% end %>
+				    	<% if job.benefits_pto? %>
+				    		<span class="jobs-benefits-icons"><i class="fa fa-suitcase"></i> PTO </span>
+				    	<% end %>
+				    	<% if job.benefits_sick? %>
+				    		<span class="jobs-benefits-icons"><i class="fa fa-hospital-o"></i> Sick Days </span>
+				    	<% end %>
+				    </div>
+				</div>
+				<div class="jobs-list-body col-xs-12 col-sm-12 col-md-12 col-lg-12" id="jobs-list-hidden-<%= job.id%>">
+					<div class="jobs-list-block col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div class="jobs-list-title col-xs-12 col-sm-12 col-md-3 col-lg-3">
+					    	<h3>Job Description</h3>
+					    </div>
+					    <div class="jobs-list-content col-xs-12 col-sm-12 col-md-9 col-lg-9">
+					    	<h3><%= simple_format job.description %></h3>
+					    </div>
+					</div>
+					<div class="jobs-list-block col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div class="jobs-list-title col-xs-12 col-sm-12 col-md-3 col-lg-3">
+					    	<h3>Qualifications</h3>
+					    </div>
+					    <div class="jobs-list-content col-xs-12 col-sm-12 col-md-9 col-lg-9">
+					    	<h3><%= simple_format job.qualifications %></h3>
+					    </div>
+					</div>
+					<div class="jobs-list-block col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div class="jobs-list-title col-xs-12 col-sm-12 col-md-3 col-lg-3">
+					    	<h3>Salary</h3>
+					    </div>
+					    <div class="jobs-list-content col-xs-12 col-sm-12 col-md-9 col-lg-9">
+					    	<h3><%= job.salary_low %> - <%= job.salary_high %></h3>
+					    </div>
+					</div>
+					<div class="jobs-list-block col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					    <div class="jobs-list-title col-xs-12 col-sm-12 col-md-3 col-lg-3">
+					    	<h3>Benefits</h3>
+					    </div>
+					    <div class="jobs-list-content col-xs-12 col-sm-12 col-md-9 col-lg-9">
+					    	<h3><%= simple_format job.benefits_description %></h3>
+					    	<div class="jobs-list-benefits">
+
+					    	</div>
+					    </div>
+					</div>
+					<div class="jobs-list-block col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div class="jobs-list-title col-xs-12 col-sm-12 col-md-3 col-lg-3">
+					    	<h3>Additional Info</h3>
+					    </div>
+					    <div class="jobs-list-content col-xs-12 col-sm-12 col-md-9 col-lg-9">
+					    	<h3><%= simple_format job.additional_info %></h3>
+					    </div>
+					</div>
+					<div class="jobs-list-block col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					    <div class="jobs-list-title col-xs-12 col-sm-12 col-md-3 col-lg-3">
+					    	<h3>How To Apply</h3>
+					    </div>
+					    <div class="jobs-list-content col-xs-12 col-sm-12 col-md-9 col-lg-9">
+					    	<h3><%= simple_format job.how_to %></h3>
+					    </div>
+					</div>
+				</div>
+		    </div>
+		<% end %>
+	</div>
+
+	<div class="jobs-pagination col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<%= will_paginate @jobs %>
+	</div>
 </div>

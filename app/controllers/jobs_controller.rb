@@ -16,16 +16,15 @@ class JobsController < ApplicationController
     @countries_uniq = @countries.uniq.sort_by!{|e| e.downcase}
   end
 
-  def home
-  
-  end
-
   def new
   	@job = current_user.jobs.build 
   end
 
   def show
   	@job = Job.find(params[:id])
+
+    # FUTURE -- SHOW ALL JOBS POSTED BY SAME USER
+    # @jobs = Job.where(user_id: 1)
   end
 
   def create
