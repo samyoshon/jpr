@@ -79,6 +79,8 @@
 	&:hover {
 		background-color: lighten($secondary-color, 55%);
 		border-bottom: 5px solid $primary-color;
+		transform: scale(1.015);
+		z-index: 101;
 	}
 
 	.jobs-list-header {

@@ -147,6 +147,7 @@ footer {
 
 .home-countries-images {
 	text-align: center;
+
 }
 
 .home-img {
@@ -163,8 +164,9 @@ footer {
 	font-weight: 900;
 	font-family: $font-family;
 	text-shadow: 2px 2px #000000;
-
+	
 	&:hover {
+		transform: scale(0.98);
 	}
 
 }
