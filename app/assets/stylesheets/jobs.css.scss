@@ -46,15 +46,15 @@
 /* #################################### */
 
 .jobs-background {
-	background: linear-gradient($third-color, lighten($primary-color, 30%));
+	background: #FFFFFF;
 }
 
 .jobs-list-container {
-	border-top: 3px groove lighten($secondary-color, 20%);
-	border-right: 2px groove lighten($secondary-color, 20%);
-	border-left: 1px groove lighten($secondary-color, 20%);
-	border-bottom: 1px groove lighten($secondary-color, 20%);
-	padding: 30px 30px 30px 50px !important;
+	border-top: 1px dotted lighten($secondary-color, 20%);
+/*	border-right: 0px dotted lighten($secondary-color, 20%);
+	border-left: 0px dotted lighten($secondary-color, 20%);*/
+/*	border-bottom: 0px dotted lighten($secondary-color, 20%);*/
+	padding: 15px 30px 15px 30px !important;
 	font-family: $font-family;
 	background-color: #FFFFFF;
 
@@ -92,7 +92,6 @@
 
 .jobs-list-body {
 	display: none;
-	padding-top: 20px;
 }
 
 .jobs-list-block {
