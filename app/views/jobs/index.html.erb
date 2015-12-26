@@ -23,7 +23,7 @@
 		<% @jobs.each do |job| %>
 			<div class="jobs-list-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<div class="jobs-list-header col-xs-12 col-sm-12 col-md-12 col-lg-12" id="<%= job.id %>">
-					<div class="jobs-list-header-thumb">
+					<div class="jobs-list-header-thumb col-xs-12 col-sm-12 col-md-2 col-lg-2">
 						<%= image_tag job.user.logo(:thumb) %>
 					</div>
 					<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
