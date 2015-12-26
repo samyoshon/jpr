@@ -20,4 +20,9 @@ $(document).on('page:load',function(){
 		$('#jobs-list-hidden-' + idContainer).slideToggle("fast");
 		console.log('hello');
 	});
+
+		$('.login-collapse').click(function(){
+		var idContainer = this.id;
+		$('#collapse-' + idContainer).slideToggle("fast");
+	});
 });

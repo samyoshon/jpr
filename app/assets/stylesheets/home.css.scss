@@ -126,6 +126,9 @@ footer {
 	text-align: center;
 }
 
+.btn-newsletter {
+	margin-top: 10px;
+}
 /* ############################################## */
 
 .home-countries-container {
@@ -148,7 +151,17 @@ footer {
 .home-countries-images {
 	text-align: center;
 
+	& a {
+
+		&:hover {
+			color: red;
+		}
+
+	}
+
 }
+
+
 
 .home-img {
 	display: flex;
@@ -166,7 +179,7 @@ footer {
 	text-shadow: 2px 2px #000000;
 	
 	&:hover {
-		transform: scaleX(1.01);
+		transform: scaleX(1.03);
 	}
 
 }

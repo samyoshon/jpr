@@ -24,21 +24,30 @@
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
          	<ul class="nav navbar-nav navbar-right">
 	          	<% if user_signed_in? %>
-					<li>
-						<%= link_to "#{current_user.name}", edit_user_registration_path, class: :"btn-navbar" %>
+	          		<li>
+						<%= link_to "Search Jobs", jobs_path, :method => :get, class: :"btn-navbar" %>
 					</li>
 					<li>
 						<%= link_to "Post A Job", new_job_path, :method => :get, class: :"btn-navbar" %>
 					</li>
-					<li>
-						<%= link_to "Logout", destroy_user_session_path, :method => :delete, class: :"btn-navbar" %>
+					<li class="dropdown-toggle btn-navbar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+						<span><%= "#{current_user.name}" %> <i class="fa fa-caret-down"></i></span>
 					</li>
+			        <ul class="dropdown-menu">
+						<li>
+							<%= link_to "Edit Profile", edit_user_registration_path, class: :"btn-navbar" %>
+						</li>
+						<li role="separator" class="divider"></li>
+						<li>
+							<%= link_to "Logout", destroy_user_session_path, :method => :delete, class: :"btn-navbar" %>
+						</li>
+					</ul>
 				<% else %>
 					<li>
 						<%= link_to "Search Jobs", jobs_path, :method => :get, class: :"btn-navbar" %>
 					</li>
 					<li>
-						<%= link_to "Post A Job", new_job_path, :method => :get, class: :"btn-navbar" %>
+						<%= link_to "Login", new_job_path, :method => :get, class: :"btn-navbar" %>
 					</li>
 				<% end %> 
 			</ul>
