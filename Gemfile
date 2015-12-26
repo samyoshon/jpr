@@ -54,6 +54,8 @@ gem 'ransack'
 
 gem 'devise', '~> 3.5', '>= 3.5.3'
 
+gem "paperclip", "~> 4.3"
+
 gem 'pry-rails'
 
 gem 'rails_12factor', group: :production

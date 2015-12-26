@@ -1,7 +1,7 @@
 <div class="login col-xs-12 col-sm-12 col-md-12 col-lg-12"> 
     <div class="login-container" id="edit-container">           
 
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { multipart: true, method: :put }) do |f| %>
             <%= devise_error_messages! %>
 
             <div class="login-container-profile">
@@ -30,6 +30,11 @@
                     <div class="field">
                         <%= f.label :facebook %><br />
                         <%= f.text_field :facebook, autofocus: true, class: "form-control login-form", placeholder: "Facebook" %>
+                    </div>
+
+                    <div class="field">
+                        <%= f.label :logo %><br />
+                        <%= f.file_field :logo, autofocus: true, class: "form-control login-form", placeholder: "Upload Image" %>
                     </div>
                 </div>
             </div>

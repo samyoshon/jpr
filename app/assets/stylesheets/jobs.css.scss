@@ -47,14 +47,14 @@
 
 .jobs-background {
 	background: #FFFFFF;
+/*	background-image: image-url('job-search-banner.png');
+	background-size: cover;
+	background-attachment: fixed;*/
 }
 
 .jobs-list-container {
 	border-top: 1px dotted lighten($secondary-color, 20%);
-/*	border-right: 0px dotted lighten($secondary-color, 20%);
-	border-left: 0px dotted lighten($secondary-color, 20%);*/
-/*	border-bottom: 0px dotted lighten($secondary-color, 20%);*/
-	padding: 15px 30px 15px 30px !important;
+	padding: 15px 0px 15px 0px !important;
 	font-family: $font-family;
 	background-color: #FFFFFF;
 
@@ -85,6 +85,11 @@
 
 	.jobs-list-header {
 		cursor: pointer;
+	}
+
+	.jobs-list-header-thumb {
+		float: left;
+		padding: 20px;
 	}
 
 }
