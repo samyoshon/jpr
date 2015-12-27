@@ -3,11 +3,14 @@
 }
 
 .show-company-header-container {
-  	padding: 50px 40px !important;
+  	padding: 40px 40px !important;
+  	border-bottom: 5px solid #000000;
   	background-color: $third-color;
   	color: #000000;
+  	text-align: center;
 
   	h1 {
+  		font-size: 55px;
   		font-weight: 900;
   	}
 
@@ -22,7 +25,7 @@
   	}
 
   	p {
-  		margin-top: 30px;
+  		margin: 10px;
   	}
 }
 
@@ -42,4 +45,15 @@
 		font-weight: 900;
 		margin: 0;
 	}
+}
+
+.show-company-qa {
+	h2 {
+		font-weight: 900;
+	}
+}
+
+#qa-header {
+	font-size: 65px;
+	margin-bottom: 30px;
 }

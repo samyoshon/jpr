@@ -17,6 +17,11 @@ $font-family: 'Lato', sans-serif;
 	padding: 10px 20px !important;
 }
 
+#navbar-hamburger {
+	padding: 15px !important;
+	margin: 20px;
+}
+
 .navbar-toggle {
 	background-color: $primary-color !important;
 	border: 2px solid $primary-color !important;
@@ -31,6 +36,10 @@ $font-family: 'Lato', sans-serif;
 	&:hover {
 		color: $primary-color !important;
 	}
+}
+
+.dropdown-menu {
+	min-width: 250px !important;
 }
 
 footer {

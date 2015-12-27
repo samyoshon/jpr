@@ -1,5 +1,8 @@
 <div class="show-company">
-	<div class="show-company-header-container">
+	<div class="show-company-header-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<div class="show-company-header-logo">
+			<%= image_tag @job.user.logo(:medium) %>
+		</div>
 		<div class="show-company-header-title">
 			<h1><%= @job.user.name %></h1>
 		</div>
@@ -19,14 +22,35 @@
 				</span>
 			<% end %>
 		</div>
-		<div class="show-company-header-description">
+		<div class="show-company-header-description col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
 			<p><%= @job.user.description %></p>
 		</div>
 	</div>
-	<div class="show-company-qa-container">
+	<div class="show-company-qa-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
 		<div class="show-company-qa-sign">
-			<h1>Q&A</h1>
+			<h1 id="qa-header">Q&A</h1>
 		</div>
+		<div class="show-company-qa" id="show-company-qa-1">
+			<h2><%= @job.user.question_one %></h2>
+			<p><%= @job.user.answer_one %></p>
+ 		</div>
+ 		<div class="show-company-qa" id="show-company-qa-2">
+			<h2><%= @job.user.question_two %></h2>
+			<p><%= @job.user.answer_two %></p>
+ 		</div>
+ 		<div class="show-company-qa" id="show-company-qa-3">
+			<h2><%= @job.user.question_three %></h2>
+			<p><%= @job.user.answer_three %></p>
+ 		</div>
+ 		<div class="show-company-qa" id="show-company-qa-4">
+			<h2><%= @job.user.question_four %></h2>
+			<p><%= @job.user.answer_four %></p>
+ 		</div>
+		<div class="show-company-qa" id="show-company-qa-5">
+			<h2><%= @job.user.question_five %></h2>
+			<p><%= @job.user.answer_five %></p>
+ 		</div>
+
 	</div>
 
 
