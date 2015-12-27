@@ -8,13 +8,13 @@
 
 	h2 {
 		margin: 0px 0px 20px 0px;
-		border-bottom: 1px dotted $secondary-color !important;
+		border-bottom: 3px solid $primary-color !important;
 		cursor: pointer;
 		font-weight: 900;
 
 		&:hover {
 			color: $primary-color;
-			border-bottom: 2px solid $primary-color !important;
+			border-bottom: 5px solid $primary-color !important;
 		}
 
 	} 
