@@ -1,8 +1,9 @@
 <div class="edit col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div class="edit-navigation col-xs-12 col-sm-12 col-md-4 col-lg-4">
-        <h2 class="edit-collapse" id="1">Edit <%= resource_name.to_s.humanize %></h2>
+        <h2 class="edit-collapse" id="1">Edit <%= resource_name.to_s.humanize %> </h2>
         <h2 class="edit-collapse" id="2">Q&A Section</h2>
         <h2 class="edit-collapse" id="3">Password Change</h2>
+        <h2 class="edit-collapse" id="4">Delete Account</h2>
     </div>
 
     <div class="edit-container col-xs-12 col-sm-12 col-md-8 col-lg-8">           
@@ -40,12 +41,15 @@
                         <%= f.label :logo %><br />
                         <%= f.file_field :logo, autofocus: true, class: "form-control login-form", placeholder: "Upload Image" %>
                     </div>
+                    <div class="actions" id="edit-update-btn">
+                        <%= f.submit "Update", class: :"btn btn-warning" %>
+                    </div>
                 </div>
             </div>
 
             <div class="edit-container-qa col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 
-                <div class="edit-container-qa-collapse edit-collapse-hidden" id="collapse-2">
+                <div class="edit-container-qa-collapse edit-collapse-hidden edit-collapse-hidden-start" id="collapse-2">
                     <div class="field">
                       <%= f.label "Question" %><br />
                       <%= f.text_field :question_one, autofocus: true, class: "form-control login-form", placeholder: "Frequently Asked Question" %>
@@ -95,12 +99,15 @@
                       <%= f.label "Answer" %><br />
                       <%= f.text_area :answer_five, autofocus: true, class: "form-control login-form show-company-textarea", placeholder: "Answer" %>
                     </div>
+                    <div class="actions" id="edit-update-btn">
+                        <%= f.submit "Update", class: :"btn btn-warning" %>
+                    </div>
                 </div>
             </div>
 
             <div class="edit-container-password col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 
-                <div class="edit-container-password-collapse edit-collapse-hidden" id="collapse-3">
+                <div class="edit-container-password-collapse edit-collapse-hidden edit-collapse-hidden-start" id="collapse-3">
                     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
                     <% end %>
@@ -114,17 +121,22 @@
                       <%= f.label :password_confirmation %><br />
                       <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control login-form" %>
                     </div>
+                    
+                    <div class="actions" id="edit-update-btn">
+                      <%= f.submit "Update", class: :"btn btn-warning" %>
+                    </div>
                 </div>
             </div>
 
-            <div class="actions">
-              <%= f.submit "Update", class: :"btn btn-warning" %>
-            </div>
         <% end %>
 
-        <br>
-        <h3>Cancel My Account</h3>
+        <div class="edit-container-delete col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="edit-container-delete-collapse edit-collapse-hidden edit-collapse-hidden-start" id="collapse-4">
+                <h3>Cancel My Account</h3>
 
-        <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: :"btn btn-danger" %>
+                <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: :"btn btn-danger" %>
+            </div>
+        </div>
+
     </div>
 </div>

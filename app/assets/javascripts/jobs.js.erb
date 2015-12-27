@@ -6,9 +6,10 @@ $(document).ready(function(){
 		console.log('hello');
 	});
 
-	$('.login-collapse').click(function(){
+	$('.edit-collapse').click(function(){
+		$('.edit-collapse-hidden').hide();
 		var idContainer = this.id;
-		$('#collapse-' + idContainer).slideToggle("fast");
+		$('#collapse-' + idContainer).show();
 	});
 });
 
@@ -21,8 +22,9 @@ $(document).on('page:load',function(){
 		console.log('hello');
 	});
 
-		$('.login-collapse').click(function(){
+	$('.edit-collapse').click(function(){
+		$('.edit-collapse-hidden').hide();
 		var idContainer = this.id;
-		$('#collapse-' + idContainer).slideToggle("fast");
+		$('#collapse-' + idContainer).show();
 	});
 });
