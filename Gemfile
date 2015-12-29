@@ -60,6 +60,8 @@ gem 'pry-rails'
 
 gem 'rails_12factor', group: :production
 
+gem 'stripe', '~> 1.31'
+
 gem 'puma'
 
 gem 'bourbon'
