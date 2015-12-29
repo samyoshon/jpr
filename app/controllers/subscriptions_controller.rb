@@ -12,14 +12,14 @@ class SubscriptionsController < ApplicationController
 	def charge
 		begin
 			Stripe::Charge.create(
-			    amount: 1000, # amount in cents, again
+			    amount: 1, # amount in cents, again
 			    currency: "usd",
 			    source: params[:stripeToken],
 			    description: "Example charge"
 	  		)
 
 			current_user.update(
-				stripe_id: customer.id,
+				stripe_id: params[:stripeId],
 				stripe_subscription_id: nil,
 				card_last4: params[:card_last4],
 				card_exp_month: params[:card_exp_month],
