@@ -12,7 +12,7 @@ class SubscriptionsController < ApplicationController
 	def charge
 		begin
 			Stripe::Charge.create(
-			    amount: 1, # amount in cents, again
+			    amount: 50, # amount in cents, again
 			    currency: "usd",
 			    source: params[:stripeToken],
 			    description: "Example charge"
@@ -27,11 +27,12 @@ class SubscriptionsController < ApplicationController
 				card_brand: params[:card_brand]
 			)
 
+  			redirect_to jobs_path
   		rescue Stripe::StripeError => e
 		    @error = e
 		    flash[:notice] = 'Some error occurred.'
+		    redirect_to root_path
 		end
-  			redirect_to root_path
 	end
 
 	def create

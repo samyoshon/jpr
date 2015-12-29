@@ -45,5 +45,5 @@ Rails.application.configure do
 
 end
 
-
+STRIPE_SECRET = "sk_test_CnY4Xsg77ZMcLokZzrsV9jyl"
 STRIPE_PUBLIC = "pk_test_gSKWUIN9dFENk37dZimwMIG9"
