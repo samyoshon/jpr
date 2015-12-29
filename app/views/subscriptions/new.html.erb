@@ -1,14 +1,14 @@
 <h1>SUBSCRIPTION</h1>
 
 
-<%= form_tag subscriptions_path, id:"payment-form" do %>
+<%= form_tag subscriptions_charge_path, id:"payment-form" do %>
 <form action="/subscriptions" method="POST" id="payment-form">
   <span class="payment-errors"></span>
 
   <div class="form-row">
     <label>
       <span>Card Number</span>
-      <input value="4242 4242 4242 4242" type="text" size="20" data-stripe="number"/>
+      <input value="4242 4242 4242 424" type="text" size="20" data-stripe="number"/>
     </label>
   </div>
 

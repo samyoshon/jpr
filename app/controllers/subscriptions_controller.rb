@@ -9,30 +9,59 @@ class SubscriptionsController < ApplicationController
 	def new
 	end
 
+	def charge
+		begin
+			Stripe::Charge.create(
+			    amount: 1000, # amount in cents, again
+			    currency: "usd",
+			    source: params[:stripeToken],
+			    description: "Example charge"
+	  		)
+
+			current_user.update(
+				stripe_id: customer.id,
+				stripe_subscription_id: nil,
+				card_last4: params[:card_last4],
+				card_exp_month: params[:card_exp_month],
+				card_exp_year: params[:card_exp_year],
+				card_brand: params[:card_brand]
+			)
+
+  		rescue Stripe::StripeError => e
+		    @error = e
+		    flash[:notice] = 'Some error occurred.'
+		end
+  			redirect_to root_path
+	end
+
 	def create
-		customer = 	if current_user.stripe_id?
-						Stripe::Customer.retrieve(current_user.stripe_id)
-					else
-						Stripe::Customer.create(email: current_user.email)
-					end
+		begin
+			customer = 	if current_user.stripe_id?
+							Stripe::Customer.retrieve(current_user.stripe_id)
+						else
+							Stripe::Customer.create(email: current_user.email)
+						end
 
-		charge = customer.charge.create(
-				amount: 10000,
-				currency: "usd",
+			subscription = customer.subscriptions.create(
 				source: params[:stripeToken],
-				description: "Charge for one-time post"
-		)
+				plan: "monthly"
+			)
 
-		current_user.update(
-			stripe_id: customer.id,
-			card_last4: params[:card_last4],
-			card_exp_month: params[:card_exp_month],
-			card_exp_year: params[:card_exp_year],
-			card_brand: params[:card_brand]
-		)
+			current_user.update(
+				stripe_id: customer.id,
+				stripe_subscription_id: subscription.id,
+				card_last4: params[:card_last4],
+				card_exp_month: params[:card_exp_month],
+				card_exp_year: params[:card_exp_year],
+				card_brand: params[:card_brand]
+			)
 
-		redirect_to root_pathstc
 
+		rescue Stripe::StripeError => e
+			@error = e
+			flash[:notice] = 'Some error occurred.'
+		end
+			redirect_to root_path
 	end
 
 	def destroy
