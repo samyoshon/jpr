@@ -8,8 +8,8 @@
 <div class="login col-xs-12 col-sm-12 col-md-12 col-lg-12"> 
 	<div class="login-container col-xs-12 col-sm-12 col-md-8 col-lg-8">
 		<div class="login-header col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<h4>Reach amazing candidates through our vast network. A standard job post will be available for 30 days to all our global users.</h4>
-			<h4 id="jobs-special">CURRENT NEW YEAR SPECIAL: ALL POSTS $16 USD! (ends January)</h4>
+			<h4 id="jobs-special">CURRENT NEW YEAR'S SPECIAL: All posts only $16 USD! (ends January)</h4>
+			<h4>Post a job. Reach amazing candidates through our vast network. A standard job post will be available for 30 days to all our global users.</h4>
 		</div>
 		<%= form_for @job do  |f| %>
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -88,8 +88,13 @@
 			</div>	
 		<% end %>
 
+
 		<div class="jobs-payment-info col-xs-12 col-sm-12 col-md-6 col-lg-6">
-		 	<%= form_tag subscriptions_charge_path, id:"payment-form" do %>
+			<div class="jobs-post-radio">
+				<input type="radio" name="sex" value="male" checked="checked">  Standard 30-day job post - $16 USD New Year's Special!<br>
+				<input type="radio" name="sex" value="male">  Standard 30-day job post - $100 USD
+			</div>
+		 	<%= form_tag subscriptions_charge_path, :method => 'POST', id:"payment-form" do %>
 			<span class="payment-errors"></span>
 
 			<div class="form-row">
@@ -97,9 +102,7 @@
 		    		<span>Card Number</span>
 		    		<input type="text" size="20" data-stripe="number" class="form-control" id="card_number" placeholder="1234 1234 1234 1234"/>
 		    	</label>
-			</div>
-
-			<div class="form-row">
+			
 			    <label>
 			    	<span>CVC</span>
 			    	<input type="text" size="4" data-stripe="cvc" class="form-control" id="card_code" placeholder="123"/>
@@ -116,7 +119,7 @@
 			    </label>
 			</div>
 
-				<button type="submit" class="btn btn-warning">Post Job</button>
+				<button type="submit" class="btn btn-warning" id="btn-job-post">Post Job</button>
 			<% end %>
 		</div>
 

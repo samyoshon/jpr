@@ -10,9 +10,11 @@ class SubscriptionsController < ApplicationController
 	end
 
 	def charge
+
+	# If I turn off the job post in JS, the money goes through...
 		begin
 			Stripe::Charge.create(
-			    amount: 51, # amount in cents, again
+			    amount: 77, # amount in cents, again
 			    currency: "usd",
 			    source: params[:stripeToken],
 			    description: "Example charge"
@@ -27,7 +29,7 @@ class SubscriptionsController < ApplicationController
 				card_brand: params[:card_brand]
 			)
 
-  			redirect_to jobs_path
+			redirect_to root_path
   		rescue Stripe::StripeError => e
 		    @error = e
 		    flash[:notice] = 'Some error occurred.'
