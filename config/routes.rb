@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root to: "jobs#home"
 
   post '/subscriptions/charge', to: 'subscriptions#charge'
+  post '/jobs', to: 'jobs#create', as: 'create_job'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

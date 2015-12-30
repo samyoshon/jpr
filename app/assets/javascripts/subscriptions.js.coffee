@@ -10,7 +10,7 @@ jQuery ->
 	  false
 
 submitForms = ->
-  $('#new_job')[0].submit()
+  $('#payment-form')[0].submit()
   return
 
 stripeResponseHandler = (status, response) ->
@@ -30,5 +30,4 @@ stripeResponseHandler = (status, response) ->
     $form.append $('<input type="hidden" name="card_brand" />').val(response.card.brand)
     # and submit
     submitForms()
-
   return

@@ -95,17 +95,18 @@
 				<input type="radio" name=nil>  Standard 30-day job post - $100 USD
 			</div>
 		 	<%= form_tag subscriptions_charge_path, :method => 'POST', id:"payment-form" do %>
+		 	<form action="" method="POST" id="payment-form">
 			<span class="payment-errors"></span>
 
 			<div class="form-row">
 		    	<label>
 		    		<span>Card Number</span>
-		    		<input type="text" size="20" data-stripe="number" class="form-control" id="card_number" placeholder="1234 1234 1234 1234"/>
+		    		<input type="text" size="20" data-stripe="number" class="form-control" placeholder="1234 1234 1234 1234" maxlength="20"/>
 		    	</label>
 			
 			    <label>
 			    	<span>CVC</span>
-			    	<input type="text" size="4" data-stripe="cvc" class="form-control" id="card_code" placeholder="123"/>
+			    	<input type="text" size="4" data-stripe="cvc" class="form-control" placeholder="123"  maxlength="3"/>
 			    </label>
 			</div>
 
@@ -113,13 +114,14 @@
 			    <label>
 			    	<span>Expiration (MM/YYYY)</span>
 			    	<br>
-			      	<input type="text" size="2" data-stripe="exp-month" class="form-control" id="card_month" placeholder="01"/>
+			      	<input type="text" size="2" data-stripe="exp-month" class="form-control" placeholder="01" maxlength="2"/>
 			    	<span> / </span>
-			    	<input type="text" size="4" data-stripe="exp-year" class="form-control" id="card_year" placeholder="2016"/>
+			    	<input type="text" size="4" data-stripe="exp-year" class="form-control" placeholder="2016" maxlength="4"/>
 			    </label>
 			</div>
 
 				<button type="submit" class="btn btn-warning" id="btn-job-post">Post Job</button>
+			</form>
 			<% end %>
 		</div>
 
