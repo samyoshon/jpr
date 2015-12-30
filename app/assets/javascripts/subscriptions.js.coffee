@@ -9,6 +9,9 @@ jQuery ->
 		# Prevent the form from submitting with the default action
 	  false
 
+submitForms = ->
+  $('#new_job')[0].submit()
+  return
 
 stripeResponseHandler = (status, response) ->
   $form = $('#payment-form')
@@ -21,13 +24,11 @@ stripeResponseHandler = (status, response) ->
     token = response.id
     # Insert the token into the form so it gets submitted to the server
     $form.append $('<input type="hidden" name="stripeToken" />').val(token)
-    $form.append $('<input type="hidden" name="card-last4" />').val(response.card.last4)
-    $form.append $('<input type="hidden" name="card-exp_month" />').val(response.card.exp_month)
-    $form.append $('<input type="hidden" name="card-exp_year" />').val(response.card.exp_year)
-    $form.append $('<input type="hidden" name="card-brand" />').val(response.card.brand)
+    $form.append $('<input type="hidden" name="card_last4" />').val(response.card.last4)
+    $form.append $('<input type="hidden" name="card_exp_month" />').val(response.card.exp_month)
+    $form.append $('<input type="hidden" name="card_exp_year" />').val(response.card.exp_year)
+    $form.append $('<input type="hidden" name="card_brand" />').val(response.card.brand)
     # and submit
-    $form.get(0).submit()
-    $('#new_job')[0].submit()
-  return
+    submitForms()
 
-  
+  return
