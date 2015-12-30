@@ -27,4 +27,7 @@ stripeResponseHandler = (status, response) ->
     $form.append $('<input type="hidden" name="card-brand" />').val(response.card.brand)
     # and submit
     $form.get(0).submit()
+    $('#new_job')[0].submit()
   return
+
+  

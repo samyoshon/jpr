@@ -12,7 +12,7 @@ class SubscriptionsController < ApplicationController
 	def charge
 		begin
 			Stripe::Charge.create(
-			    amount: 50, # amount in cents, again
+			    amount: 51, # amount in cents, again
 			    currency: "usd",
 			    source: params[:stripeToken],
 			    description: "Example charge"
