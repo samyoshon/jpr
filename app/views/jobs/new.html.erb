@@ -8,116 +8,123 @@
 <div class="login col-xs-12 col-sm-12 col-md-12 col-lg-12"> 
 	<div class="login-container col-xs-12 col-sm-12 col-md-8 col-lg-8">
 		<%= form_for @job do  |f| %>
-		  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-		   <%= f.label :title, "Job Title", class: "control-label" %>
-		   <%= f.text_field :title, class: "form-control login-form", maxlength: 150  %>
-		  </div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<%= f.label :title, "Job Title", class: "control-label" %>
+			    <%= f.text_field :title, class: "form-control login-form", maxlength: 150  %>
+			</div>
+			  
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			    <%= f.label :description, "Job Description", class: "control-label" %>
+			    <%= f.text_area :description, class: "form-control login-form job-post-textarea", maxlength: 850 %>
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+			    <%= f.label :city_id, "City", class: "control-label" %>
+			    <%= f.text_field :city_id, :size => 40, class: "form-control login-form", maxlength: 50 %>
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+			    <%= f.label :country_id, "Country", class: "control-label" %>
+			    <%= f.country_select(:country_id, {prompt: "Select a Country"}, {class: "form-control login-form"}, label: false) %>
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			    <%= f.label :qualifications, "Qualifications", class: "control-label" %>
+			    <%= f.text_area :qualifications, class: "form-control login-form job-post-textarea", maxlength: 850 %>
+			</div>
+
+	  		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	  			<%= f.label :qualifications, "Salary", class: "control-label" %>
+	  		</div>
+   			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+   				<%= f.text_field :salary_low, class: "form-control login-form", maxlength: 30, placeholder: "Salaray Low (ex:  2.1 million KRW)" %>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+   				<%= f.text_field :salary_high, class: "form-control login-form", maxlength: 30, placeholder: "Salary High (ex:  2.3 million KRW)" %>
+   			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<%= f.label :benefits_description, "Benefits", class: "control-label" %>
+		 		<%= f.text_area :benefits_description, class: "form-control login-form job-post-textarea", maxlength: 850   %>
+			</div>
+
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				<%= check_box :job, :benefits_airfare %>
+				<%= f.label :benefits_airfare, "Subsidized Airfare" %>
+			</div>
+
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				<%= check_box :job, :benefits_housing %>
+				<%= f.label :benefits_housing, "Subsidized Housing" %>
+			</div>
+
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				<%= check_box :job, :benefits_medical%>
+		 		<%= f.label :benefits_medical, "Medical Insurance" %>
+			</div>
+
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+		 		<%= check_box :job, :benefits_pto %>
+		 		<%= f.label :benefits_pto, "Paid Vacation Days" %>
+			</div>
 		  
-		  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-		   <%= f.label :description, "Job Description", class: "control-label" %>
-		   <%= f.text_area :description, class: "form-control login-form job-post-textarea", maxlength: 850 %>
-		  </div>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+		 		<%= check_box :job, :benefits_sick %>
+				<%= f.label :benefits_sick, "Paid Sick Days" %>
+			</div>
 
-		  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-		   <%= f.label :city_id, "City", class: "control-label" %>
-		   <%= f.text_field :city_id, :size => 40, class: "form-control login-form", maxlength: 50 %>
-		  </div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		 		<%= f.label :additional_info, "Additional Information", class: "control-label" %>
+		 		<%= f.text_area :additional_info, class: "form-control login-form job-post-textarea", maxlength: 850  %>
+			</div>
 
-		  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-		   <%= f.label :country_id, "Country", class: "control-label" %>
-		   <%= f.country_select(:country_id, {prompt: "Select a Country"}, {class: "form-control login-form"}, label: false) %>
-		  </div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			 	<%= f.label :how_to, "How To Apply", class: "control-label" %>
+			 	<%= f.text_area :how_to, class: "form-control login-form job-post-textarea", maxlength: 850    %>
+			</div>	
+		<% end %>
 
-		  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-		   <%= f.label :qualifications, "Qualifications", class: "control-label" %>
-		   <%= f.text_area :qualifications, class: "form-control login-form job-post-textarea", maxlength: 850 %>
-		  </div>
-
-
-  		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-  			<%= f.label :qualifications, "Salary", class: "control-label" %>
-  		</div>
-   		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-   			<%= f.text_field :salary_low, class: "form-control login-form", maxlength: 30, placeholder: "Salaray Low (ex:  2.1 million KRW)" %>
-		</div>
-		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-   			<%= f.text_field :salary_high, class: "form-control login-form", maxlength: 30, placeholder: "Salary High (ex:  2.3 million KRW)" %>
-   		</div>
-
-
-		  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-		   <%= f.label :benefits_description, "Benefits", class: "control-label" %>
-		   <%= f.text_area :benefits_description, class: "form-control login-form job-post-textarea", maxlength: 850   %>
-		  </div>
-
-		  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-		   <%= check_box :job, :benefits_airfare %>
-		   <%= f.label :benefits_airfare, "Subsidized Airfare" %>
-		  </div>
-
-		  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-		   <%= check_box :job, :benefits_housing %>
-		   <%= f.label :benefits_housing, "Subsidized Housing" %>
-		  </div>
-
-		  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-		   <%= check_box :job, :benefits_medical%>
-		   <%= f.label :benefits_medical, "Medical Insurance" %>
-		  </div>
-
-		  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-		   <%= check_box :job, :benefits_pto %>
-		   <%= f.label :benefits_pto, "Paid Vacation Days" %>
-		  </div>
-		  
-		  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-		   <%= check_box :job, :benefits_sick %>
-		   <%= f.label :benefits_sick, "Paid Sick Days" %>
-		  </div>
-
-		  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-		   <%= f.label :additional_info, "Additional Information", class: "control-label" %>
-		   <%= f.text_area :additional_info, class: "form-control login-form job-post-textarea", maxlength: 850  %>
-		  </div>
-
-		  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-		   <%= f.label :how_to, "How To Apply", class: "control-label" %>
-		   <%= f.text_area :how_to, class: "form-control login-form job-post-textarea", maxlength: 850    %>
-		  </div>	
-		  <% end %>
-		  
+		<div class="jobs-payment-info col-xs-12 col-sm-12 col-md-6 col-lg-6">
 		 	<%= form_tag subscriptions_charge_path, id:"payment-form" do %>
-			  <span class="payment-errors"></span>
+			<span class="payment-errors"></span>
 
-			  <div class="form-row">
+			<div class="form-row">
+		    	<label>
+		    		<span>Card Number</span>
+		    		<input type="text" size="20" data-stripe="number" class="form-control" id="card_number" placeholder="1234 1234 1234 1234"/>
+		    	</label>
+			</div>
+
+			<div class="form-row">
 			    <label>
-			      <span>Card Number</span>
-			      <input value="4242 4242 4242 4242" type="text" size="20" data-stripe="number" id="card_number"/>
+			    	<span>CVC</span>
+			    	<input type="text" size="4" data-stripe="cvc" class="form-control" id="card_code" placeholder="123"/>
 			    </label>
-			  </div>
+			</div>
 
-			  <div class="form-row">
+			<div class="form-row form-inline">
 			    <label>
-			      <span>CVC</span>
-			      <input value="123" type="text" size="4" data-stripe="cvc" id="card_code"/>
+			    	<span>Expiration (MM/YYYY)</span>
+			    	<br>
+			      	<input type="text" size="2" data-stripe="exp-month" class="form-control" id="card_month" placeholder="01"/>
+			    	<span> / </span>
+			    	<input type="text" size="4" data-stripe="exp-year" class="form-control" id="card_year" placeholder="2016"/>
 			    </label>
-			  </div>
+			</div>
 
-			  <div class="form-row">
-			    <label>
-			      <span>Expiration (MM/YYYY)</span>
-			      <input value="12" type="text" size="2" data-stripe="exp-month" id="card_month"/>
-			    </label>
-			    <span> / </span>
-			    <input value="2020" type="text" size="4" data-stripe="exp-year" id="card_year"/>
-			  </div>
-
-			  <button type="submit">Submit Payment</button>
+				<button type="submit" class="btn btn-warning">Post Job</button>
 			<% end %>
+		</div>
 
-
+		<div class="jobs-payment-info jobs-payment-info-imgs col-xs-12 col-sm-12 col-md-6 col-lg-6">
+			<div class="jobs-payment-img" id="jobs-secure"></div>
+	 		<i class="fa fa-cc-visa"></i>
+		  	<i class="fa fa-cc-mastercard"></i>
+		  	<i class="fa fa-cc-amex"></i>
+		  	<i class="fa fa-cc-jcb"></i>
+		  	<i class="fa fa-cc-diners-club"></i>
+		  	<i class="fa fa-cc-discover"></i>
+		</div>
 		
-
-
 	</div>
 </div>

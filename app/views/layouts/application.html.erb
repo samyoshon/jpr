@@ -27,7 +27,7 @@
          	<ul class="nav navbar-nav navbar-right">
 	          	<% if user_signed_in? %>
 	          		<li>
-						<%= link_to "Search Jobs", new_subscriptions_path, :method => :get, class: :"btn-navbar" %>
+						<%= link_to "Search Jobs", jobs_path, :method => :get, class: :"btn-navbar" %>
 					</li>
 					<li>
 						<%= link_to "Post A Job", new_job_path, :method => :get, class: :"btn-navbar" %>
@@ -47,7 +47,7 @@
 				<% else %>
 					<li>
 						<!-- jobs_path -->
-						<%= link_to "Search Jobs", new_subscriptions_path, :method => :get, class: :"btn-navbar" %>
+						<%= link_to "Search Jobs", jobs_path, :method => :get, class: :"btn-navbar" %>
 					</li>
 					<li>
 						<%= link_to "Employers", new_job_path, :method => :get, class: :"btn-navbar" %>

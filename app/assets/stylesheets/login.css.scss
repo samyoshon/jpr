@@ -49,3 +49,24 @@
 .login-collapse-hidden {
 	display: none;
 }
+
+/* ##################################### */
+
+.jobs-payment-info {
+	margin-top: 20px;
+}
+
+.jobs-payment-info-imgs {
+	text-align: center;
+
+	i {
+		font-size: 35px;
+	}
+}
+
+.jobs-payment-img {
+	background-image: image-url('secure-checkout.png');
+	background-repeat: no-repeat;
+	background-position: center; 
+	height: 255px;
+}
