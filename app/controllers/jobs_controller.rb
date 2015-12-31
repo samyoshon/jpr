@@ -2,39 +2,78 @@ class JobsController < ApplicationController
 
 	before_action :authenticate_user!, except: [:index, :show, :home]
 
-  def index
-    @search = Job.search(params[:q])
-    @jobs = @search.result.paginate(page: params[:page], per_page: 15).order("created_at DESC")
+    def index
+        @search = Job.search(params[:q])
+        @jobs = @search.result.paginate(page: params[:page], per_page: 15).order("created_at DESC")
 
-    ###Find Countries That Have Job Posts - Used for filter option
-  	@jobs_all = Job.where(["created_at > ?", 30.days.ago]).order("created_at DESC")
+        ###Find Countries That Have Job Posts - Used for filter option
+  	    @jobs_all = Job.where(["created_at > ?", 30.days.ago]).order("created_at DESC")
 
-    @countries = []
-    @jobs_all.each do |job|
-      @countries << job.country_id
+        @countries = []
+        @jobs_all.each do |job|
+            @countries << job.country_id
+        end
+        @countries_uniq = @countries.uniq.sort_by!{|e| e.downcase}
     end
-    @countries_uniq = @countries.uniq.sort_by!{|e| e.downcase}
-  end
 
-  def new
-  	@job = current_user.jobs.build 
-  end
+    def new
+      	@job = current_user.jobs.build 
+    end
 
-  def show
-  	@job = Job.find(params[:id])
+    def show
+      	@job = Job.find(params[:id])
 
-    # FUTURE -- SHOW ALL JOBS POSTED BY SAME USER
-    # @jobs = Job.where(user_id: 1)
-  end
+        # FUTURE -- SHOW ALL JOBS POSTED BY SAME USER
+        # @jobs = Job.where(user_id: 1)
+    end
 
-  def create
-  	@job = current_user.jobs.build(post_params)
-  	if @job.save
-  		redirect_to jobs_path
-  	else
-  		render new_job_path
-  	end
-  end
+    def create
+        @job = current_user.jobs.build(post_params)
+        charge_error = nil
+
+        if @job.valid? 
+            begin
+                customer =  if current_user.stripe_id?
+                                Stripe::Customer.retrieve(current_user.stripe_id)
+                            else
+                                Stripe::Customer.create(
+                                    email: current_user.email,
+                                    source: params[:stripeToken],
+                                    description: "Standard Charge Customer")
+                            end
+
+                current_user.update(
+                    stripe_id: customer.id,
+                    stripe_subscription_id: nil,
+                    card_last4: params[:card_last4],
+                    card_exp_month: params[:card_exp_month],
+                    card_exp_year: params[:card_exp_year],
+                    card_brand: params[:card_brand]
+                )
+
+                Stripe::Charge.create(
+                    amount: 51, # amount in cents, again
+                    currency: "usd",
+                    customer: customer.id,
+                    description: "Example charge 123"
+                )
+
+            rescue Stripe::StripeError => e
+                    charge_error = e.message
+            end
+
+            if charge_error
+                flash[:error] = charge_error
+                render :new
+            else
+                @job.save
+                redirect_to jobs_path
+            end
+        else
+            flash[:error] = 'One or more errors in your order'
+            render :new
+        end
+    end
 
   ####### PRIVATE ######
 

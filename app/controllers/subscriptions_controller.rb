@@ -12,16 +12,17 @@ class SubscriptionsController < ApplicationController
 	def charge
 
 	# If I turn off the job post in JS, the money goes through...
-		# begin
+		begin
+			
 			customer = 	if current_user.stripe_id?
-					Stripe::Customer.retrieve(current_user.stripe_id)
-				else
-					Stripe::Customer.create(
-						email: current_user.email,
-						source: params[:stripeToken],
-			  			description: "Standard Charge Customer"
-						)
-				end
+							Stripe::Customer.retrieve(current_user.stripe_id)
+						else
+							Stripe::Customer.create(
+								email: current_user.email,
+								source: params[:stripeToken],
+					  			description: "Standard Charge Customer"
+								)
+						end
 
 			current_user.update(
 				stripe_id: customer.id,
@@ -39,11 +40,13 @@ class SubscriptionsController < ApplicationController
 			    description: "Example charge 123"
 	  		)
 
-  # 		rescue Stripe::StripeError => e
-		#     @error = e
-		#     flash[:notice] = 'Some error occurred.'
-		#     redirect_to root_path
-		# end
+	  		redirect_to create_job_path
+
+  		rescue Stripe::StripeError => e
+		    @error = e
+		    flash[:notice] = 'Some error occurred.'
+		    redirect_to root_path
+		end
 	end
 
 	def create
@@ -67,8 +70,6 @@ class SubscriptionsController < ApplicationController
 				card_exp_year: params[:card_exp_year],
 				card_brand: params[:card_brand]
 			)
-
-			redirect_to create_job_path
 
 		rescue Stripe::StripeError => e
 			@error = e

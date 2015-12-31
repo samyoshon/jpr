@@ -94,7 +94,7 @@
 				<input type="radio" name=nil checked="checked">  Standard 30-day job post - $16 USD New Year's Special!<br>
 				<input type="radio" name=nil>  Standard 30-day job post - $100 USD
 			</div>
-		 	<%= form_tag subscriptions_charge_path, :method => 'POST', id:"payment-form" do %>
+		 	<%= form_tag create_job_path, :method => 'POST', id:"payment-form" do %>
 		 	<form action="" method="POST" id="payment-form">
 			<span class="payment-errors"></span>
 
