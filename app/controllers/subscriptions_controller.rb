@@ -34,10 +34,10 @@ class SubscriptionsController < ApplicationController
 			)
 
 			Stripe::Charge.create(
-			    amount: 51, # amount in cents, again
+			    amount: 1600, # amount in cents, again
 			    currency: "usd",
 			    customer: customer.id,
-			    description: "Example charge 123"
+			    description: "Standard Post Charge"
 	  		)
 
 	  		redirect_to create_job_path

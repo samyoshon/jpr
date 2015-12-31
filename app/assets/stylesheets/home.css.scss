@@ -260,7 +260,7 @@ footer {
 
 .carousel-inner > .item > p {
 	font-family: $font-family;
-	height: 60px;
+	height: 100px;
 }
 
 .carousel-indicators-container {
@@ -278,3 +278,20 @@ footer {
 }
 
 /* ############################################## */
+
+.home-action {
+	font-family: $font-family;
+	text-align: center;
+
+	h1 {
+		font-weight: 900;
+	}
+}
+
+.home-action-content {
+	padding: 25px 0px;
+
+	form {
+		margin: 20px;
+	}
+}

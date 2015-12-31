@@ -24,7 +24,7 @@
 
 <div class="home-newsletter col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<div class="home-newsletter-content form-inline">
-		<h4>Get a weekly email of the best new jobs abroad</h4>
+		<h4>Stay updated with our newsletters of the best new jobs abroad</h4>
 		<%= text_field :title, nil, :placeholder => "First Name", class: :"text-field-newsletter form-control" %>
 		<%= email_field :title, nil, :placeholder => "Email Address", class: :"text-field-newsletter form-control" %>
 		<%= button_to 'Keep Me Updated', nil, :placeholder => "Submit", class: :"btn btn-success form-control btn-newsletter" %>
@@ -77,24 +77,16 @@
 		  	<h3>REAL PEOPLE, REAL EXPERIENCES</h3>
 		  	<div class="carousel-inner col-xs-12 col-sm-12 col-md-6 col-lg-6" role="listbox">
 		    	<div class="item active">
-			      	<!-- <div class="carousel-content col-xs-12 col-sm-12 col-md-6 col-lg-6"> -->
-			      		<p>"I think the most important characteristics to have if you want to find a way to work overseas is to be extremely adaptable and always trust your gut." -Tiffany V.</p>
-			      	<!-- </div> -->
+			      	<p class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">"I think the most important characteristics to have if you want to find a way to work overseas is to be extremely adaptable and always trust your gut." -Tiffany V.</p>
 		    	</div>
 			    <div class="item">
-			      	<!-- <div class="carousel-content col-xs-12 col-sm-12 col-md-6 col-lg-6"> -->
-			        	<p>"Deciding to work in Korea was one of the most terrifying decisions I’ve made, but the most valuable decision I’ve made.  Engaging a world of new cultures and unknown experiences with an open mind and a heart to learn taught me more about myself than I could have at the comforts of home, allowed me to expand my worldview, and caused me to make valuable and lifelong friendships." -Justin C.</p>
-			      	<!-- </div> -->
+			        <p class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">"Deciding to work in Korea was one of the most terrifying but also the most valuable decision I’ve made. I learned more about myself, expanded my worldview, and made valuable and lifelong friendships." -Justin C.</p>
 			    </div>
 			    <div class="item">
-			      	<!-- <div class="carousel-content col-xs-12 col-sm-12 col-md-6 col-lg-6"> -->
-			        	<p>"Teaching abroad was a challenging yet extremely rewarding experience. I learned to survive and thrive in an unfamiliar environment, managed a classroom full of students of various ages and backgrounds, and created special relationships that will last a lifetime. I'm a much better person now for it!" -Billy N.</p>
-			      	<!-- </div> -->
+		        	<p class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">"Teaching abroad was a challenging yet extremely rewarding experience. I learned to survive and thrive in an unfamiliar environment, managed a classroom full of students of various ages and backgrounds, and created special relationships that will last a lifetime. I'm a much better person now for it!" -Billy N.</p>
 			    </div>
 			    <div class="item">
-			      	<!-- <div class="carousel-content col-xs-12 col-sm-12 col-md-6 col-lg-6"> -->
-			        	<p>"Traveling abroad changes you in so many positive ways. It's a sad fact that people who have never traveled will never understand what I mean." -Sam S.</p>
-			      	<!-- </div> -->
+		        	<p class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">"Traveling abroad changes you in so many positive ways. It's a sad fact that people who have never traveled will never understand what I mean." -Sam S.</p>
 			    </div>
 		  		<div class="carousel-indicators-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			  		<ol class="carousel-indicators">
@@ -110,7 +102,11 @@
 </div>
 
 <div class="home-action">
-	POST JOB HERE!
+	<div class="home-action-content col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+		<h1>Are you a recruiter?</h1>
+		<p>We help recruiters find the best candidates from all over the world. Post a job that you want thousands of qualified candidates in our network to see. Register and have your post up internationally in less than a few minutes.</p>
+		<%= button_to 'Post A Job', new_job_path, class: :"btn btn-danger", method: :get %>
+	</div>
 </div>
 
 </div>
