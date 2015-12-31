@@ -11,7 +11,7 @@
 			<h4 id="jobs-special">CURRENT NEW YEAR'S SPECIAL: All posts only $16 USD! (ends January 31st)</h4>
 			<h4>Post a job. Reach amazing candidates through our vast network. A standard job post will be available for 30 days to all our global users.</h4>
 		</div>
-		<%= form_for @job do  |f| %>
+		<%= form_for @job do |f| %>
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<%= f.label :title, "Job Title", class: "control-label" %>
 			    <%= f.text_field :title, class: "form-control login-form", maxlength: 150  %>

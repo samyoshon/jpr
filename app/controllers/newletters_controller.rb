@@ -1,4 +1,0 @@
-class NewslettersController < ApplicationController
-
-
-end

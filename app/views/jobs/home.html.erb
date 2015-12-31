@@ -25,9 +25,11 @@
 <div class="home-newsletter col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<div class="home-newsletter-content form-inline">
 		<h4>Stay updated with our newsletters of the best new jobs abroad</h4>
-		<%= text_field :title, nil, :placeholder => "First Name", class: :"text-field-newsletter form-control" %>
-		<%= email_field :title, nil, :placeholder => "Email Address", class: :"text-field-newsletter form-control" %>
-		<%= button_to 'Keep Me Updated', nil, :placeholder => "Submit", class: :"btn btn-success form-control btn-newsletter" %>
+		<%= form_for Newsletter.new do |f| %>
+			<%= f.text_field :name, class: :"text-field-newsletter form-control", placeholder: "First Name" %>
+			<%= f.email_field :email, class: :"text-field-newsletter form-control", placeholder: "Email" %>
+			<%= f.submit 'Keep Me Updated', class: :"btn btn-success form-control btn-newsletter" %>
+		<% end %>
 	</div>
 </div>
 
