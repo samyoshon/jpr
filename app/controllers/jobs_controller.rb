@@ -4,7 +4,7 @@ class JobsController < ApplicationController
 
     def index
         @search = Job.search(params[:q])
-        @jobs = @search.result.paginate(page: params[:page], per_page: 15).order("created_at DESC")
+        @jobs = @search.result.paginate(page: params[:page], per_page: 30).order("created_at DESC")
 
         ###Find Countries That Have Job Posts - Used for filter option
   	    @jobs_all = Job.where(["created_at > ?", 30.days.ago]).order("created_at DESC")
@@ -58,19 +58,21 @@ class JobsController < ApplicationController
                     description: "Example charge 123"
                 )
 
+            flash[:notice] = 'Job has been successfully posted!'
+
             rescue Stripe::StripeError => e
                     charge_error = e.message
             end
 
             if charge_error
-                flash[:error] = charge_error
+                flash[:alert] = charge_error
                 render :new
             else
                 @job.save
                 redirect_to jobs_path
             end
         else
-            flash[:error] = 'One or more errors in your order'
+            flash[:alert] = 'One or more errors in your order'
             render :new
         end
     end

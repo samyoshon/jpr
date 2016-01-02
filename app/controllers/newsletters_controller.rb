@@ -7,6 +7,7 @@ class NewslettersController < ApplicationController
 	def create
 		@newsletter = Newsletter.new(newsletter_params)
 		if @newsletter.save
+			flash[:notice] = 'Email received. We\'ll keep you updated!'
 			redirect_to root_path
 		else
 			render :new
