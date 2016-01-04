@@ -49,7 +49,7 @@ class JobsController < ApplicationController
                 )
 
                 Stripe::Charge.create(
-                    amount: 1600, # amount in cents, again
+                    amount: 50, # amount in cents, again
                     currency: "usd",
                     customer: customer.id,
                     description: "Example charge 123"
