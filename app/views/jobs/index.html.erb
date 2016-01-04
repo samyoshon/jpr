@@ -21,7 +21,7 @@
 	<!-- Results -->
 	<div class="jobs-list col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 		<% @jobs.each do |job| %>
-			<div class="jobs-list-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="jobs-list-container col-xs-12 col-sm-12 col-md-12 col-lg-12" id="jobs-list-container">
 				<div class="jobs-list-header col-xs-12 col-sm-12 col-md-12 col-lg-12" id="<%= job.id %>">
 					<div class="jobs-list-header-thumb col-xs-12 col-sm-12 col-md-2 col-lg-2">
 						<%= image_tag job.user.logo(:thumb) %>

@@ -22,9 +22,6 @@ class JobsController < ApplicationController
 
     def show
       	@job = Job.find(params[:id])
-
-        # FUTURE -- SHOW ALL JOBS POSTED BY SAME USER
-        # @jobs = Job.where(user_id: 1)
     end
 
     def create

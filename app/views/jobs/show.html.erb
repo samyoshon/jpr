@@ -1,59 +1,82 @@
-<div class="show-company">
-	<div class="show-company-header-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
-		<div class="show-company-header-logo">
-			<%= image_tag @job.user.logo(:medium) %>
+<div class="jobs-list-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<div class="jobs-list-header jobs-show-header col-xs-12 col-sm-12 col-md-12 col-lg-12" id="<%= @job.id %>">
+		<div class="jobs-list-header-thumb jobs-show-header-thumb col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<%= image_tag @job.user.logo(:thumb) %>
 		</div>
-		<div class="show-company-header-title">
-			<h1><%= @job.user.name %></h1>
-		</div>
-		<div class="show-company-header-social">
-			<% if @job.user.website? %>
-				<span class="jobs-benefits-icons">
-					<a href="https://<%= @job.user.website %>" target="blank">
-						<i class="fa fa-home"></i>
-					</a>
-				</span>
-			<% end %>
-			<% if @job.user.facebook? %>
-				<span class="jobs-benefits-icons">
-					<a href="https://<%= @job.user.facebook %>" target="blank">
-						<i class="fa fa-facebook-official"></i>
-					</a>
-				</span>
-			<% end %>
-		</div>
-		<div class="show-company-header-description col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
-			<p><%= @job.user.description %></p>
+		<div class="jobs-show-title col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	   		<h2><%= @job.title %></h2>
+	   		<h3><%= link_to @job.user.name, user_path(@job.user.id), class: :'job-links' %></h3>
+		    <h4 id="jobs-show-location"><i class="fa fa-map-marker"></i>  <%= @job.city_id %>, <%= @job.country_id %></h4>
+		    <div class="jobs-benefits">
+		    	<% if @job.benefits_housing? %>
+		    		<span class="jobs-benefits-icons"><i class="fa fa-home"></i> Housing </span>
+		    	<% end %>
+		    	<% if @job.benefits_airfare? %>
+		    		<span class="jobs-benefits-icons"><i class="fa fa-plane"></i> Airfare </span>
+		    	<% end %>
+		    	<% if @job.benefits_medical? %>
+		    		<span class="jobs-benefits-icons"><i class="fa fa-heart"></i> Health Insurance </span>
+		    	<% end %>
+		    	<% if @job.benefits_pto? %>
+		    		<span class="jobs-benefits-icons"><i class="fa fa-suitcase"></i> PTO </span>
+		    	<% end %>
+		    	<% if @job.benefits_sick? %>
+		    		<span class="jobs-benefits-icons"><i class="fa fa-hospital-o"></i> Sick Days </span>
+		    	<% end %>
+	    	</div>
 		</div>
 	</div>
-	<div class="show-company-qa-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
-		<div class="show-company-qa-sign">
-			<h1 id="qa-header">Q&A</h1>
+	<div class="jobs-show-body col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<div class="jobs-list-block col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="jobs-list-title col-xs-12 col-sm-12 col-md-3 col-lg-3">
+		    	<h3>Job Description</h3>
+		    </div>
+		    <div class="jobs-list-content col-xs-12 col-sm-12 col-md-9 col-lg-9">
+		    	<h3><%= simple_format @job.description %></h3>
+		    </div>
 		</div>
-		<div class="show-company-qa" id="show-company-qa-1">
-			<h2><%= @job.user.question_one %></h2>
-			<p><%= @job.user.answer_one %></p>
- 		</div>
- 		<div class="show-company-qa" id="show-company-qa-2">
-			<h2><%= @job.user.question_two %></h2>
-			<p><%= @job.user.answer_two %></p>
- 		</div>
- 		<div class="show-company-qa" id="show-company-qa-3">
-			<h2><%= @job.user.question_three %></h2>
-			<p><%= @job.user.answer_three %></p>
- 		</div>
- 		<div class="show-company-qa" id="show-company-qa-4">
-			<h2><%= @job.user.question_four %></h2>
-			<p><%= @job.user.answer_four %></p>
- 		</div>
-		<div class="show-company-qa" id="show-company-qa-5">
-			<h2><%= @job.user.question_five %></h2>
-			<p><%= @job.user.answer_five %></p>
- 		</div>
+		<div class="jobs-list-block col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="jobs-list-title col-xs-12 col-sm-12 col-md-3 col-lg-3">
+		    	<h3>Qualifications</h3>
+		    </div>
+		    <div class="jobs-list-content col-xs-12 col-sm-12 col-md-9 col-lg-9">
+		    	<h3><%= simple_format @job.qualifications %></h3>
+		    </div>
+		</div>
+		<div class="jobs-list-block col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="jobs-list-title col-xs-12 col-sm-12 col-md-3 col-lg-3">
+		    	<h3>Salary</h3>
+		    </div>
+		    <div class="jobs-list-content col-xs-12 col-sm-12 col-md-9 col-lg-9">
+		    	<h3><%= @job.salary_low %> - <%= @job.salary_high %></h3>
+		    </div>
+		</div>
+		<div class="jobs-list-block col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		    <div class="jobs-list-title col-xs-12 col-sm-12 col-md-3 col-lg-3">
+		    	<h3>Benefits</h3>
+		    </div>
+		    <div class="jobs-list-content col-xs-12 col-sm-12 col-md-9 col-lg-9">
+		    	<h3><%= simple_format @job.benefits_description %></h3>
+		    	<div class="jobs-list-benefits">
 
+		    	</div>
+		    </div>
+		</div>
+		<div class="jobs-list-block col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="jobs-list-title col-xs-12 col-sm-12 col-md-3 col-lg-3">
+		    	<h3>Additional Info</h3>
+		    </div>
+		    <div class="jobs-list-content col-xs-12 col-sm-12 col-md-9 col-lg-9">
+		    	<h3><%= simple_format @job.additional_info %></h3>
+		    </div>
+		</div>
+		<div class="jobs-list-block col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		    <div class="jobs-list-title col-xs-12 col-sm-12 col-md-3 col-lg-3">
+		    	<h3>How To Apply</h3>
+		    </div>
+		    <div class="jobs-list-content col-xs-12 col-sm-12 col-md-9 col-lg-9">
+		    	<h3><%= simple_format @job.how_to %></h3>
+		    </div>
+		</div>
 	</div>
-
-
-<!-- FUTURE // SHOW ALL JOBS POSTED BY SAME USER -->
-
 </div>

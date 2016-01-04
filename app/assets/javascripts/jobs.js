@@ -3,7 +3,6 @@ $(document).ready(function(){
 	$('.jobs-list-header').click(function(){
 		var idContainer = this.id;
 		$('#jobs-list-hidden-' + idContainer).slideToggle("fast");
-		console.log('hello');
 	});
 
 	$('.edit-collapse').click(function(){
@@ -19,7 +18,6 @@ $(document).on('page:load',function(){
 	$('.jobs-list-header').click(function(){
 		var idContainer = this.id;
 		$('#jobs-list-hidden-' + idContainer).slideToggle("fast");
-		console.log('hello');
 	});
 
 	$('.edit-collapse').click(function(){

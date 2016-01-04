@@ -1,1 +1,59 @@
-<%= @user.name %>
+<div class="show-company">
+	<div class="show-company-header-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<div class="show-company-header-logo">
+			<%= image_tag @user.logo(:medium) %>
+		</div>
+		<div class="show-company-header-title">
+			<h1><%= @user.name %></h1>
+		</div>
+		<div class="show-company-header-social">
+			<% if @user.website? %>
+				<span class="jobs-benefits-icons">
+					<a href="https://<%= @user.website %>" target="blank">
+						<i class="fa fa-home"></i>
+					</a>
+				</span>
+			<% end %>
+			<% if @user.facebook? %>
+				<span class="jobs-benefits-icons">
+					<a href="https://<%= @user.facebook %>" target="blank">
+						<i class="fa fa-facebook-official"></i>
+					</a>
+				</span>
+			<% end %>
+		</div>
+		<div class="show-company-header-description col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+			<p><%= @user.description %></p>
+		</div>
+	</div>
+	<div class="show-company-qa-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<div class="show-company-qa-sign">
+			<h1 id="qa-header">Q&A</h1>
+		</div>
+		<div class="show-company-qa" id="show-company-qa-1">
+			<h2><%= @user.question_one %></h2>
+			<p><%= @user.answer_one %></p>
+ 		</div>
+ 		<div class="show-company-qa" id="show-company-qa-2">
+			<h2><%= @user.question_two %></h2>
+			<p><%= @user.answer_two %></p>
+ 		</div>
+ 		<div class="show-company-qa" id="show-company-qa-3">
+			<h2><%= @user.question_three %></h2>
+			<p><%= @user.answer_three %></p>
+ 		</div>
+ 		<div class="show-company-qa" id="show-company-qa-4">
+			<h2><%= @user.question_four %></h2>
+			<p><%= @user.answer_four %></p>
+ 		</div>
+		<div class="show-company-qa" id="show-company-qa-5">
+			<h2><%= @user.question_five %></h2>
+			<p><%= @user.answer_five %></p>
+ 		</div>
+
+	</div>
+
+
+<!-- FUTURE // SHOW ALL JOBS POSTED BY SAME USER -->
+
+</div>

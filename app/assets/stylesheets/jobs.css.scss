@@ -77,13 +77,6 @@
 		margin: 2px 0px;
 	}
 
-	&:hover {
-		background-color: lighten($secondary-color, 57%);
-		border-bottom: 5px solid $primary-color;
-		transform: scale(1.015);
-		z-index: 101;
-	}
-
 	.jobs-list-header {
 		cursor: pointer;
 	}
@@ -101,6 +94,38 @@
 			}
 	}
 
+}
+
+#jobs-list-container {
+
+	&:hover {
+		background-color: lighten($secondary-color, 57%);
+		border-bottom: 5px solid $primary-color;
+		transform: scale(1.015);
+		z-index: 101;
+	}
+}
+
+.jobs-show-title {
+	text-align: center;
+
+	h2 {
+		font-size: 25px;
+		font-weight: 900;
+	}
+
+	h3 {
+		font-size: 23px !important;
+		font-weight: 900;
+	}
+
+	h4 {
+		margin-top: 15px !important;
+	}
+}
+
+.jobs-show-body {
+	padding-top: 20px;
 }
 
 
