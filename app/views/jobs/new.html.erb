@@ -11,7 +11,7 @@
 			<h4 id="jobs-special">CURRENT NEW YEAR'S SPECIAL: All posts only $16 USD! (ends January 31st)</h4>
 			<h4>Post a job. Reach amazing candidates through our vast network. A standard job post will be available for 30 days to all our global users.</h4>
 		</div>
-		<%= form_for @job do |f| %>
+		<%= form_for @job, html: {id:"payment-form"} do |f| %>
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<%= f.label :title, "Job Title", class: "control-label" %>
 			    <%= f.text_field :title, class: "form-control login-form", maxlength: 150  %>
@@ -38,7 +38,7 @@
 			</div>
 
 	  		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	  			<%= f.label :qualifications, "Salary", class: "control-label" %>
+	  			<%= f.label :salary, "Salary", class: "control-label" %>
 	  		</div>
    			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
    				<%= f.text_field :salary_low, class: "form-control login-form", maxlength: 30, placeholder: "Salaray Low (ex:  2.1 million KRW)" %>
@@ -79,34 +79,32 @@
 
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 		 		<%= f.label :additional_info, "Additional Information", class: "control-label" %>
-		 		<%= f.text_area :additional_info, class: "form-control login-form job-post-textarea", maxlength: 850  %>
+		 		<%= f.text_area :additional_info, class: "form-control login-form job-post-textarea", maxlength: 850 %>
 			</div>
 
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			 	<%= f.label :how_to, "How To Apply", class: "control-label" %>
-			 	<%= f.text_area :how_to, class: "form-control login-form job-post-textarea", maxlength: 850    %>
+			 	<%= f.text_area :how_to, class: "form-control login-form job-post-textarea", maxlength: 850 %>
 			</div>	
-		<% end %>
-
 
 		<div class="jobs-payment-info col-xs-12 col-sm-12 col-md-6 col-lg-6">
 			<div class="jobs-post-radio">
 				<input type="radio" name=nil checked="checked">  Standard 30-day job post - $16 USD New Year's Special!<br>
 				<input type="radio" name=nil>  Standard 30-day job post - $100 USD
 			</div>
-		 	<%= form_tag create_job_path, :method => 'POST', id:"payment-form" do %>
-		 	<form action="" method="POST" id="payment-form">
+			<!--<%= form_tag create_job_path, :method => 'POST', id:"payment-form" do %> -->
+		 	<!-- <form action="" method="POST" id="payment-form"> -->
 			<span class="payment-errors"></span>
 
 			<div class="form-row">
 		    	<label>
 		    		<span>Card Number</span>
-		    		<input type="text" size="20" data-stripe="number" class="form-control" placeholder="1234 1234 1234 1234" maxlength="20"/>
+		    		<input type="text" size="20" data-stripe="number" class="form-control" value="4242 4242 4242 4242" placeholder="1234 1234 1234 1234" maxlength="20"/>
 		    	</label>
 			
 			    <label>
 			    	<span>CVC</span>
-			    	<input type="text" size="4" data-stripe="cvc" class="form-control" placeholder="123"  maxlength="3"/>
+			    	<input type="text" size="4" data-stripe="cvc" class="form-control" value="123" placeholder="123"  maxlength="3"/>
 			    </label>
 			</div>
 
@@ -114,14 +112,15 @@
 			    <label>
 			    	<span>Expiration (MM/YYYY)</span>
 			    	<br>
-			      	<input type="text" size="2" data-stripe="exp-month" class="form-control" placeholder="01" maxlength="2"/>
+			      	<input type="text" size="2" data-stripe="exp-month" class="form-control" value="12" placeholder="01" maxlength="2"/>
 			    	<span> / </span>
-			    	<input type="text" size="4" data-stripe="exp-year" class="form-control" placeholder="2016" maxlength="4"/>
+			    	<input type="text" size="4" data-stripe="exp-year" class="form-control" value="2020" placeholder="2016" maxlength="4"/>
 			    </label>
 			</div>
 
+			<!-- </form> -->
+			<!-- <% end %> -->
 				<button type="submit" class="btn btn-warning" id="btn-job-post">Post Job</button>
-			</form>
 			<% end %>
 		</div>
 

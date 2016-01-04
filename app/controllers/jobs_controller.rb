@@ -36,7 +36,8 @@ class JobsController < ApplicationController
                                 Stripe::Customer.create(
                                     email: current_user.email,
                                     source: params[:stripeToken],
-                                    description: "Standard Charge Customer")
+                                    description: "Standard Charge Customer"
+                                )                 
                             end
 
                 current_user.update(
@@ -52,10 +53,10 @@ class JobsController < ApplicationController
                     amount: 50, # amount in cents, again
                     currency: "usd",
                     customer: customer.id,
-                    description: "Example charge 123"
+                    description: "Standard job posting"
                 )
 
-            flash[:notice] = 'Job has been successfully posted!'
+                flash[:notice] = 'Job has been successfully posted!'
 
             rescue Stripe::StripeError => e
                     charge_error = e.message
@@ -68,10 +69,12 @@ class JobsController < ApplicationController
                 @job.save
                 redirect_to jobs_path
             end
+        
         else
             flash[:alert] = 'One or more errors in your order'
             render :new
         end
+
     end
 
   ####### PRIVATE ######

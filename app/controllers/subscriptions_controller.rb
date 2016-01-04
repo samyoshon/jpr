@@ -23,7 +23,7 @@ class SubscriptionsController < ApplicationController
 					  			description: "Standard Charge Customer"
 								)
 						end
-
+			
 			current_user.update(
 				stripe_id: customer.id,
 				stripe_subscription_id: nil,

@@ -11,6 +11,7 @@ jQuery ->
 
 submitForms = ->
   $('#payment-form')[0].submit()
+  $('#new_job')[0].submit()
   return
 
 stripeResponseHandler = (status, response) ->
@@ -29,6 +30,5 @@ stripeResponseHandler = (status, response) ->
     $form.append $('<input type="hidden" name="card_exp_year" />').val(response.card.exp_year)
     $form.append $('<input type="hidden" name="card_brand" />').val(response.card.brand)
     # and submit
-    submitForms()
-    $('#new_job')[0].submit()
+    $form.get(0).submit()    
   return
