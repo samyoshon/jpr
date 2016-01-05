@@ -99,24 +99,19 @@ footer {
 /* ############################################## */
 
 .home-hero {
-/*	@include align-items(center);
-  	@include display(flex);
-  	@include flex-direction(center);
-  	@include justify-content(center);*/
   	display: flex;
   	justify-content: center;
   	align-items: center;
   	align-content: center;
   	text-align: center;
   	background: lighten($secondary-color, 30%);
-  	background-image: image-url('hero-bg-vid.gif');
+  	background-image: image-url('hero-bg-vid-copy.gif');
   	background-size: cover;
   	background-position: center bottom;
   	height: 100vh;
 }
 
 .home-hero-content {
-/*	@include flex(1);*/
 	color: white;
 	font-family: $font-family;
 
