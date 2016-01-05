@@ -50,7 +50,7 @@ class JobsController < ApplicationController
                 )
 
                 Stripe::Charge.create(
-                    amount: 50, # amount in cents, again
+                    amount: 1600, # amount in cents, again
                     currency: "usd",
                     customer: customer.id,
                     description: "Standard job posting"
