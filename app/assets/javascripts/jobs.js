@@ -2,6 +2,7 @@
 $(document).ready(function(){
 	$('.jobs-list-header').click(function(){
 		var idContainer = this.id;
+		$('.jobs-list-container-' + idContainer).toggleClass("container-active");
 		$('#jobs-list-hidden-' + idContainer).slideToggle("fast");
 	});
 
@@ -17,6 +18,7 @@ $(document).ready(function(){
 $(document).on('page:load',function(){
 	$('.jobs-list-header').click(function(){
 		var idContainer = this.id;
+		$('.jobs-list-container-' + idContainer).toggleClass("container-active");
 		$('#jobs-list-hidden-' + idContainer).slideToggle("fast");
 	});
 

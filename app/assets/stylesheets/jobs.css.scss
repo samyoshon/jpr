@@ -101,9 +101,14 @@
 	&:hover {
 		background-color: lighten($secondary-color, 57%);
 		border-bottom: 5px solid $primary-color;
-		transform: scale(0.985);
+		transform: scale(0.99);
 		z-index: 101;
 	}
+}
+
+.container-active {
+	background-color: lighten($secondary-color, 57%);
+	transform: scale(0.99);
 }
 
 .jobs-show-title {
