@@ -8,7 +8,7 @@ class JobsController < ApplicationController
 
 
         ###Find Countries That Have Job Posts - Used for filter option
-  	    @jobs_all = Job.where(["created_at < ?", 30.days.ago]).order("created_at DESC")
+  	    @jobs_all = Job.where(["created_at > ?", 30.days.ago]).order("created_at DESC")
 
         @countries = []
         @jobs_all.each do |job|
