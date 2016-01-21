@@ -27,15 +27,12 @@ class JobsController < ApplicationController
 
     def create
         @job = current_user.jobs.build(post_params)
+        if @job.save
+            redirect_to jobs_path
+        end
 
 
         # comment this part out if adding stripe #
-        if @job.save
-            redirect_to jobs_path
-        else
-            @job = Job.all
-            render :new
-        end
         # comment this part out if adding stripe #
    
         # charge_error = nil
