@@ -26,54 +26,65 @@ class JobsController < ApplicationController
 
     def create
         @job = current_user.jobs.build(post_params)
-        charge_error = nil
 
-        if @job.valid? 
-            begin
-                customer =  if current_user.stripe_id?
-                                Stripe::Customer.retrieve(current_user.stripe_id)
-                            else
-                                Stripe::Customer.create(
-                                    email: current_user.email,
-                                    source: params[:stripeToken],
-                                    description: "Standard Charge Customer"
-                                )                 
-                            end
 
-                current_user.update(
-                    stripe_id: customer.id,
-                    stripe_subscription_id: nil,
-                    card_last4: params[:card_last4],
-                    card_exp_month: params[:card_exp_month],
-                    card_exp_year: params[:card_exp_year],
-                    card_brand: params[:card_brand]
-                )
-
-                Stripe::Charge.create(
-                    amount: 1600, # amount in cents, again
-                    currency: "usd",
-                    customer: customer.id,
-                    description: "Standard job posting"
-                )
-
-                flash[:notice] = 'Job has been successfully posted!'
-
-            rescue Stripe::StripeError => e
-                    charge_error = e.message
-            end
-
-            if charge_error
-                flash[:alert] = charge_error
-                render :new
-            else
-                @job.save
-                redirect_to jobs_path
-            end
-        
+        # comment this part out if adding stripe #
+        if @job.save
+            redirect_to jobs_path
         else
-            flash[:alert] = 'One or more errors in your order'
+            @job = Job.all
             render :new
         end
+        # comment this part out if adding stripe #
+   
+        # charge_error = nil
+
+        # if @job.valid? 
+        #     begin
+        #         customer =  if current_user.stripe_id?
+        #                         Stripe::Customer.retrieve(current_user.stripe_id)
+        #                     else
+        #                         Stripe::Customer.create(
+        #                             email: current_user.email,
+        #                             source: params[:stripeToken],
+        #                             description: "Standard Charge Customer"
+        #                         )                 
+        #                     end
+
+        #         current_user.update(
+        #             stripe_id: customer.id,
+        #             stripe_subscription_id: nil,
+        #             card_last4: params[:card_last4],
+        #             card_exp_month: params[:card_exp_month],
+        #             card_exp_year: params[:card_exp_year],
+        #             card_brand: params[:card_brand]
+        #         )
+
+        #         Stripe::Charge.create(
+        #             amount: 1600, # amount in cents, again
+        #             currency: "usd",
+        #             customer: customer.id,
+        #             description: "Standard job posting"
+        #         )
+
+        #         flash[:notice] = 'Job has been successfully posted!'
+
+        #     rescue Stripe::StripeError => e
+        #             charge_error = e.message
+        #     end
+
+        #     if charge_error
+        #         flash[:alert] = charge_error
+        #         render :new
+        #     else
+        #         @job.save
+        #         redirect_to jobs_path
+        #     end
+        
+        # else
+        #     flash[:alert] = 'One or more errors in your order'
+        #     render :new
+        # end
 
     end
 
