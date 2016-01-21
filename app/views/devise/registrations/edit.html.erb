@@ -38,7 +38,10 @@
                     </div>
 
                     <div class="field">
-                        <%= f.label :logo %><br />
+                        <%= f.label :logo, "Company Logo (300x300)"%><br />
+                        <% if @user.logo.exists? %>
+                            <%= image_tag @user.logo.url(:thumb) %><br>
+                        <% end %>
                         <%= f.file_field :logo, autofocus: true, class: "form-control login-form", placeholder: "Upload Image" %>
                     </div>
                     <div class="actions" id="edit-update-btn">

@@ -4,10 +4,11 @@ class JobsController < ApplicationController
 
     def index
         @search = Job.search(params[:q])
-        @jobs = @search.result.paginate(page: params[:page], per_page: 30).order("created_at DESC")
+        @jobs = @search.result.paginate(page: params[:page], per_page: 30).order("created_at DESC").where(["created_at > ?", 30.days.ago]).order("created_at DESC")
+
 
         ###Find Countries That Have Job Posts - Used for filter option
-  	    @jobs_all = Job.where(["created_at > ?", 30.days.ago]).order("created_at DESC")
+  	    @jobs_all = Job.where(["created_at < ?", 30.days.ago]).order("created_at DESC")
 
         @countries = []
         @jobs_all.each do |job|
