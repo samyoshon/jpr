@@ -67,4 +67,6 @@ gem 'puma'
 
 gem 'bourbon'
 
+gem 'aws-sdk'
+
 ruby "2.2.0"
