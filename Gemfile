@@ -55,7 +55,7 @@ gem 'ransack'
 
 gem 'devise', '~> 3.5', '>= 3.5.3'
 
-gem "paperclip", "~> 4.3"
+gem "paperclip"
 
 gem 'pry-rails'
 
@@ -65,8 +65,6 @@ gem 'stripe', '~> 1.31'
 
 gem 'puma'
 
-gem 'bourbon'
-
-gem 'aws-sdk'
+gem 'aws-sdk-v1'
 
 ruby "2.2.0"
