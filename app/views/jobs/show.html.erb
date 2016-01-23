@@ -2,7 +2,7 @@
 <div class="jobs-list-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<div class="jobs-list-header jobs-show-header col-xs-12 col-sm-12 col-md-12 col-lg-12" id="<%= @job.id %>">
 		<div class="jobs-list-header-thumb jobs-show-header-thumb col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<%= image_tag @job.user.logo(:thumb), class: :'jobs-circle-image'%>
+			<%= image_tag @job.user.logo.url(:thumb), class: :'jobs-circle-image'%>
 		</div>
 		<div class="jobs-show-title col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	   		<h2><%= @job.title %></h2>
