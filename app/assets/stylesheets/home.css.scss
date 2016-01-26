@@ -131,7 +131,7 @@ footer {
 .home-checklist-content {
 	width: 30%;
 	padding: 40px 10px;
-	background-color: tint($third-color, 10%);
+	background-color: $third-color;
 
 	h3 {
 		font-family: $font-family;
