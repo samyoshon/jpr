@@ -8,6 +8,22 @@
 		</div>
 		<div class="jobs-show-title col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<h3><%= @job.user.name %></h3>
+			<div class="show-company-header-social">
+			<% if @job.user.website? %>
+				<span class="jobs-benefits-icons">
+					<a href="https://<%= @job.user.website %>" target="blank">
+						<i class="fa fa-home"></i>
+					</a>
+				</span>
+			<% end %>
+			<% if @job.user.facebook? %>
+				<span class="jobs-benefits-icons">
+					<a href="https://<%= @job.user.facebook %>" target="blank">
+						<i class="fa fa-facebook-official"></i>
+					</a>
+				</span>
+			<% end %>
+		</div>
 			<p><%= @job.user.description %></p>
 		</div>
 		<div class="jobs-show-title col-xs-12 col-sm-12 col-md-12 col-lg-12">
