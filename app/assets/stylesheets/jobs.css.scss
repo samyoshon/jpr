@@ -97,7 +97,7 @@
 	&:hover {
 		background-color: lighten($secondary-color, 57%);
 		border-bottom: 5px solid $primary-color;
-		transition: background-color 0.2s ease;
+		transition: background-color 0.3s ease;
 		transition: border 0.3s ease;
 		z-index: 101;
 	}
@@ -105,7 +105,7 @@
 
 .container-active {
 	background-color: lighten($secondary-color, 57%);
-	transform: scale(0.99);
+	transition: background-color 0.3s ease;
 }
 
 .jobs-show-title {
@@ -193,6 +193,7 @@
 .jobs-pagination a:hover, .jobs-pagination a:focus {
       border-color: $primary-color;
       background: $primary-color;
+      transition: background-color 0.3s ease;
       color: white; 
 }
   
