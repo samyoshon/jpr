@@ -97,7 +97,8 @@
 	&:hover {
 		background-color: lighten($secondary-color, 57%);
 		border-bottom: 5px solid $primary-color;
-		transform: scale(0.99);
+		transition: background-color 0.2s ease;
+		transition: border 0.3s ease;
 		z-index: 101;
 	}
 }
