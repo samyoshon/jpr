@@ -2,6 +2,11 @@
   	font-family: $font-family;
 }
 
+.show-company-divider {
+  padding-bottom: 20px;
+  border-bottom: 1px dashed black;
+}
+
 .show-company-header-container {
   	padding: 40px 40px !important;
   	border-bottom: 5px solid #000000;
