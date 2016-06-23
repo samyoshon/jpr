@@ -8,9 +8,9 @@
 <div class="login col-xs-12 col-sm-12 col-md-12 col-lg-12"> 
 	<div class="login-container col-xs-12 col-sm-12 col-md-8 col-lg-8">
 		<div class="login-header col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
 			<h4>Post a job. Reach amazing candidates through our vast network. A standard job post will be available for 30 days to all our global users.</h4>
 		</div>
+
 		<%= form_for @job, html: {id:"payment-form"} do |f| %>
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<%= f.label :title, "Job Title", class: "control-label" %>
@@ -87,52 +87,59 @@
 			 	<%= f.text_area :how_to, class: "form-control login-form job-post-textarea", maxlength: 850 %>
 			</div>	
 
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<button type="submit" class="btn btn-warning" id="btn-job-post">Post Job</button>
-			</div>
+			<!-- INSERT STRIPE CODE HERE -->
+
+			<!-- STRIPE PAYMENT -->
+			<!-- CODE NEEDS TO BE BETWEEN FORM PAYMENT -->
 			
+			<div class="jobs-payment-info col-xs-12 col-sm-12 col-md-6 col-lg-6">
+				<div class="jobs-post-radio">
+					<input type="radio" name=nil checked="checked">  Standard 30-day job post - $100 USD<br>
+					<input type="radio" name=nil>  Sponsored 30-day front page job post - $200 USD (Coming Soon!)
+				</div>
+
+				<!-- <%= form_tag create_job_path, :method => 'POST', id:"payment-form" do %> -->
+			 	<!-- <form action="" method="POST" id="payment-form"> -->
+					<span class="payment-errors"></span>
+
+					<div class="form-row">
+				    	<label>
+				    		<span>Card Number</span>
+				    		<input type="text" size="20" data-stripe="number" class="form-control" placeholder="1234 1234 1234 1234" maxlength="20"/>
+				    	</label>
+					
+					    <label>
+					    	<span>CVC</span>
+					    	<input type="text" size="4" data-stripe="cvc" class="form-control" placeholder="123"  maxlength="3"/>
+					    </label>
+					</div>
+
+					<div class="form-row form-inline">
+					    <label>
+					    	<span>Expiration (MM/YYYY)</span>
+					    	<br>
+					      	<input type="text" size="2" data-stripe="exp-month" class="form-control" placeholder="01" maxlength="2"/>
+					    	<span> / </span>
+					    	<input type="text" size="4" data-stripe="exp-year" class="form-control" placeholder="2020" maxlength="4"/>
+					    </label>
+					</div>
+
+				<!-- </form> -->
+				<!-- <% end %> -->
+
+
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<button type="submit" class="btn btn-warning" id="btn-job-post">Post Job</button>
+				</div>
+			
+
 			<% end %>
 		</div>
 
 
-		<!-- STRIPE PAYMENT -->
-			
-		<!-- <div class="jobs-payment-info col-xs-12 col-sm-12 col-md-6 col-lg-6">
-			<div class="jobs-post-radio">
-				<input type="radio" name=nil checked="checked">  Standard 30-day job post - $16 USD New Year's Special!<br>
-				<input type="radio" name=nil>  Standard 30-day job post - $100 USD
-			</div> -->
-			<!--<%= form_tag create_job_path, :method => 'POST', id:"payment-form" do %> -->
-		 	<!-- <form action="" method="POST" id="payment-form"> -->
-			<!-- <span class="payment-errors"></span>
-
-			<div class="form-row">
-		    	<label>
-		    		<span>Card Number</span>
-		    		<input type="text" size="20" data-stripe="number" class="form-control" placeholder="1234 1234 1234 1234" maxlength="20"/>
-		    	</label>
-			
-			    <label>
-			    	<span>CVC</span>
-			    	<input type="text" size="4" data-stripe="cvc" class="form-control" placeholder="123"  maxlength="3"/>
-			    </label>
-			</div>
-
-			<div class="form-row form-inline">
-			    <label>
-			    	<span>Expiration (MM/YYYY)</span>
-			    	<br>
-			      	<input type="text" size="2" data-stripe="exp-month" class="form-control" placeholder="01" maxlength="2"/>
-			    	<span> / </span>
-			    	<input type="text" size="4" data-stripe="exp-year" class="form-control" placeholder="2016" maxlength="4"/>
-			    </label>
-			</div> -->
-
-			<!-- </form> -->
-			<!-- <% end %> -->
 
 
-<!-- 		<div class="jobs-payment-info jobs-payment-info-imgs col-xs-12 col-sm-12 col-md-6 col-lg-6">
+		<div class="jobs-payment-info jobs-payment-info-imgs col-xs-12 col-sm-12 col-md-6 col-lg-6">
 			<div class="jobs-payment-img" id="jobs-secure"></div>
 	 		<i class="fa fa-cc-visa"></i>
 		  	<i class="fa fa-cc-mastercard"></i>
@@ -140,7 +147,7 @@
 		  	<i class="fa fa-cc-jcb"></i>
 		  	<i class="fa fa-cc-diners-club"></i>
 		  	<i class="fa fa-cc-discover"></i>
-		</div> -->
+		</div>
 		
 	</div>
 </div>
